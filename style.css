@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    background: #f4f7fa; /* 白に近いペールブルー */
+    color: #222;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 24px;
+  }
+  
+  header {
+    background: #1976d2;
+    color: #fff;
+    padding: 48px 0 32px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .tagline {
+    margin-top: 12px;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  
+  main section {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 32px;
+    padding: 32px 24px;
+  }
+  
+  h2 {
+    color: #2c3e50;
+    border-left: 4px solid #2c3e50;
+    padding-left: 0.7em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 1.3rem;
+  }
+  
+  ul {
+    padding-left: 1.5em;
+  }
+  
+  .project {
+    margin-top: 16px;
+    padding: 16px;
+    background: #eef6fa; /* やや落ち着いた水色で明るさを保つ */
+    border: 1px solid #c0dbea;
+    border-radius: 8px;
+  }
+  
+  a {
+    color: #2c3e50;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .contact li {
+    margin-bottom: 0;
+  }
+  
+  .contact a {
+    color: #1976d2;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact a:hover {
+    color: #1565c0;
+    text-decoration: none;
+  }
+  
+  footer {
+    background: #eee;
+    text-align: center;
+    color: #888;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+  
+  main section:nth-of-type(1) {
+    background: #fafdff;
+  }
+  main section:nth-of-type(2) {
+    background: #f5faff;
+  }
+  main section:nth-of-type(3) {
+    background: #f8fbff;
+  }
+  main section:nth-of-type(4) {
+    background: #ffffff;
+  }
+  
+  .accordion-item {
+    margin-bottom: 20px;
+  }
+  .accordion-toggle {
+    display: none;
+  }
+  .accordion-title {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    background: #e3f2fd;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .accordion-title:hover {
+    background: #bbdefb;
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 0 16px;
+  }
+  .accordion-toggle:checked + .accordion-title + .accordion-content {
+    max-height: 1000px;
+    padding: 16px;
+  }
+  .accordion-title::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.2s;
+  }
+  .accordion-toggle:checked + .accordion-title::before {
+    content: '▼';
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 8px;
+    }
+    main section {
+      padding: 18px 8px;
+    }
+    header {
+      padding: 32px 0 20px 0;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+.profile-photo {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.modal-img-bg {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+.modal-img-bg.active {
+  display: flex;
+}
+.modal-img-bg img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+  
