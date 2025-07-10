@@ -1,0 +1,1 @@
+# hamada-shinichiro9351.github.io
