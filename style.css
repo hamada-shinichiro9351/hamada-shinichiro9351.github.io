@@ -1,40 +1,53 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
   background: #f4f7fa;
   color: #222;
   margin: 0;
 }
+
 .container {
   max-width: 800px;
   margin: auto;
   padding: 24px;
 }
+
 header {
   background: #1976d2;
   color: #fff;
-  padding: 48px 0 32px;
+  padding: 48px 0 32px 0;
   text-align: center;
 }
+
 header h1 {
   margin: 0;
   font-size: 2.5rem;
   letter-spacing: 0.05em;
 }
+
 .tagline {
   margin-top: 12px;
   font-size: 1.2rem;
   font-weight: 300;
 }
+
 main section {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   margin-bottom: 32px;
   padding: 32px 24px;
+  animation: fadeIn 0.6s ease-in;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 h2 {
   color: #2c3e50;
   border-left: 4px solid #2c3e50;
@@ -44,12 +57,71 @@ h2 {
   font-size: 1.6rem;
   font-weight: 600;
 }
+
+ul {
+  padding-left: 1.5em;
+}
+
+.project {
+  margin-top: 16px;
+  padding: 16px;
+  background: #eef6fa;
+  border: 1px solid #c0dbea;
+  border-radius: 8px;
+}
+
+a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: #1976d2;
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact a {
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.contact a:hover {
+  color: #1565c0;
+}
+
+footer {
+  background: #eee;
+  text-align: center;
+  color: #888;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+main section:nth-of-type(1) { background: #fafdff; }
+main section:nth-of-type(2) { background: #f5faff; }
+main section:nth-of-type(3) { background: #f8fbff; }
+main section:nth-of-type(4) { background: #ffffff; }
+
+/* アコーディオン */
 .accordion-item {
   margin-bottom: 20px;
 }
+
 .accordion-toggle {
   display: none;
 }
+
 .accordion-title {
   display: flex;
   align-items: center;
@@ -61,34 +133,56 @@ h2 {
   border-radius: 8px;
   transition: background 0.2s;
 }
+
 .accordion-title:hover {
   background: #bbdefb;
 }
+
 .accordion-title::before {
   content: '▶';
   display: inline-block;
   margin-right: 12px;
   font-size: 1.2em;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s;
 }
+
 .accordion-toggle:checked + .accordion-title::before {
+  content: '▼';
   transform: rotate(90deg);
 }
+
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.3s, padding 0.3s;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 16px;
+  text-align: center; /* 追加: 説明文とボタンを中央寄せ */
 }
+
+.accordion-content p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.accordion-content a {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.accordion-content button {
+  display: inline-block;
+  margin: 0 auto;
+}
+
 .accordion-toggle:checked + .accordion-title + .accordion-content {
   max-height: 2000px;
   padding: 16px;
 }
-video {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-top: 12px;
-}
+
 .zoomable-img {
   width: 100%;
   max-width: 320px;
@@ -98,54 +192,71 @@ video {
   display: block;
   cursor: zoom-in;
 }
-.cta-button {
-  background-color: #1976d2;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  display: inline-block;
-  text-align: center;
-}
-.cta-button:hover {
-  background-color: #1565c0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-#scrollTopBtn {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  background-color: #1976d2;
-  color: #fff;
-  border: none;
-  padding: 12px 16px;
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
   border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.modal-img-bg {
   display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
 }
-#scrollTopBtn:hover {
-  background-color: #1565c0;
+
+.modal-img-bg.active {
+  display: flex;
 }
+
+.modal-img-bg img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+/* Difyチャット調整 */
+#dify-chatbot-bubble-button {
+  bottom: 140px !important;
+  right: 20px !important;
+}
+
+#dify-chatbot-bubble-window {
+  margin-bottom: 140px !important;
+}
+
+/* レスポンシブ */
 @media (max-width: 600px) {
   .container {
     padding: 8px;
   }
+
   main section {
     padding: 18px 8px;
   }
+
   header {
-    padding: 32px 0 20px;
+    padding: 32px 0 20px 0;
   }
+
   header h1 {
     font-size: 1.5rem;
+  }
+
+  #dify-chatbot-bubble-button {
+    bottom: 100px !important;
+  }
+
+  #dify-chatbot-bubble-window {
+    margin-bottom: 100px !important;
   }
 }
