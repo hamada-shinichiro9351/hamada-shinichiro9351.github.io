@@ -130,6 +130,42 @@
     .contact-list a:hover {
       text-decoration: underline;
     }
+    /* チャットボット埋め込みのスタイル例 */
+    .chatbot-container {
+      position: fixed;
+      bottom: 80px;
+      right: 30px;
+      width: 320px;
+      height: 450px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: #fff;
+      overflow: hidden;
+      z-index: 1000;
+    }
+    .chatbot-header {
+      background: #1976d2;
+      color: #fff;
+      padding: 8px 12px;
+      font-weight: bold;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .chatbot-close {
+      cursor: pointer;
+      font-size: 1.2rem;
+      user-select: none;
+    }
+    .chatbot-iframe {
+      width: 100%;
+      height: calc(100% - 36px);
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -241,9 +277,41 @@
     </section>
   </main>
 
+  <!-- チャットボットアイコンと埋め込み -->
+  <div id="chatbotIcon" style="
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #1976d2;
+    color: white;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 1001;
+  " title="チャットボットを開く">💬</div>
+
+  <div id="chatbotContainer" class="chatbot-container" style="display:none;">
+    <div class="chatbot-header">
+      チャットボット
+      <span id="chatbotClose" class="chatbot-close" title="閉じる">&times;</span>
+    </div>
+    <iframe
+      src="https://udify.app/chatbot/UAM8T8LGkqvcLf7i"
+      class="chatbot-iframe"
+      title="チャットボット">
+    </iframe>
+  </div>
+
   <button id="scrollTopBtn" aria-label="ページトップへ">↑</button>
 
   <script>
+    // スクロールトップボタン表示制御
     const scrollTopBtn = document.getElementById("scrollTopBtn");
     window.onscroll = function () {
       if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -255,6 +323,21 @@
     scrollTopBtn.onclick = function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    // チャットボット表示制御
+    const chatbotIcon = document.getElementById("chatbotIcon");
+    const chatbotContainer = document.getElementById("chatbotContainer");
+    const chatbotClose = document.getElementById("chatbotClose");
+
+    chatbotIcon.addEventListener('click', () => {
+      chatbotContainer.style.display = "block";
+      chatbotIcon.style.display = "none";
+    });
+
+    chatbotClose.addEventListener('click', () => {
+      chatbotContainer.style.display = "none";
+      chatbotIcon.style.display = "flex";
+    });
   </script>
 </body>
 </html>
