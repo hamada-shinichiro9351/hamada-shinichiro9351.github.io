@@ -95,6 +95,55 @@
       border-radius: 8px;
       margin-top: 12px;
     }
+    .zoomable-img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      border-radius: 8px;
+      margin: 12px auto;
+      display: block;
+      cursor: zoom-in;
+    }
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 12px;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    /* 連絡先 */
+    .contact {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .contact a {
+      color: #1976d2;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact a:hover {
+      color: #1565c0;
+    }
+    .contact a .icon-text {
+      font-size: 24px;
+      margin-right: 8px;
+      line-height: 1;
+    }
+    .contact a img {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+    }
+    /* スクロールトップボタン */
     #scrollTopBtn {
       position: fixed;
       bottom: 30px;
@@ -114,63 +163,21 @@
     #scrollTopBtn:hover {
       background-color: #1565c0;
     }
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .contact-list li {
-      margin-bottom: 8px;
-      font-size: 1rem;
-    }
-    .contact-list a {
-      color: #1976d2;
-      text-decoration: none;
-    }
-    .contact-list a:hover {
-      text-decoration: underline;
-    }
-    /* チャットボット埋め込みのスタイル例 */
-    .chatbot-container {
-      position: fixed;
-      bottom: 80px;
-      right: 30px;
-      width: 320px;
-      height: 450px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      background: #fff;
-      overflow: hidden;
-      z-index: 1000;
-    }
-    .chatbot-header {
-      background: #1976d2;
-      color: #fff;
-      padding: 8px 12px;
-      font-weight: bold;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-    .chatbot-close {
-      cursor: pointer;
-      font-size: 1.2rem;
-      user-select: none;
-    }
-    .chatbot-iframe {
-      width: 100%;
-      height: calc(100% - 36px);
-      border: none;
+    @media (max-width: 600px) {
+      .container { padding: 8px; }
+      main section { padding: 18px 8px; }
+      header { padding: 32px 0 20px; }
+      header h1 { font-size: 1.5rem; }
+      .contact {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
+      <img src="face.jpg" alt="プロフィール写真" class="profile-photo" />
       <h1>濱田慎一郎</h1>
       <p class="tagline">AIと共に、業務を一歩先へ</p>
     </div>
@@ -203,12 +210,12 @@
       <div class="works-gallery">
 
         <div class="accordion-item">
-          <input type="checkbox" id="item1" class="accordion-toggle" />
+          <input type="checkbox" id="item1" class="accordion-toggle" checked />
           <label for="item1" class="accordion-title" tabindex="0">よくある退去時の疑問に、LINEでさっと答えるAIボット</label>
           <div class="accordion-content">
             <img src="taikyo_line_sample.png" alt="原状回復LINEボットの画面サンプル" class="zoomable-img" />
             <p>原状回復に関するルールや費用負担の考え方をLINEから質問できるチャットボット。<br />
-            ガイドラインに基づく情報整理と自然な対話形式で、実用的なAI活用を体験できます。</p>
+              ガイドラインに基づく情報整理と自然な対話形式で、実用的なAI活用を体験できます。</p>
             <div style="text-align:center; margin-top:16px;">
               <a href="https://line.me/R/ti/p/@863nhxkq" target="_blank" rel="noopener noreferrer">
                 <button class="cta-button">サポートAIボットを見る</button>
@@ -223,7 +230,7 @@
           <div class="accordion-content">
             <img src="taikyo_sample.png" alt="社内ナレッジAI化サンプル画面" class="zoomable-img" />
             <p>経費精算ルールや就業規則に関する質問に自動応答するチャットフロー。<br />
-            ナレッジベースのFAQ対応や社内チャットボット化の基礎実装例として構築。</p>
+              ナレッジベースのFAQ対応や社内チャットボット化の基礎実装例として構築。</p>
             <div style="text-align:center; margin-top:16px;">
               <a href="https://udify.app/chatbot/UAM8T8LGkqvcLf7i" target="_blank" rel="noopener noreferrer">
                 <button class="cta-button">社内規定チャットフローを見る</button>
@@ -239,7 +246,7 @@
             <img src="gijiroku_sample2.png" alt="AI議事録作成画面サンプル" class="zoomable-img" />
             <img src="gijiroku_sample3.png" alt="AI議事録作成画面サンプル2" class="zoomable-img" />
             <p>音声ファイルをアップロードするだけで、AIが内容を要約・整形し、議事録を自動作成します。<br />
-            要点抽出やフォーマット整形まで含めた、実用的な業務効率化ワークフローです。</p>
+              要点抽出やフォーマット整形まで含めた、実用的な業務効率化ワークフローです。</p>
             <div style="text-align:center; margin-top:16px;">
               <a href="https://udify.app/workflow/c5KoqdWR4a8mgKwP" target="_blank" rel="noopener noreferrer">
                 <button class="cta-button">議事録ワークフローを見る</button>
@@ -249,7 +256,7 @@
         </div>
 
         <div class="accordion-item">
-          <input type="checkbox" id="item4" class="accordion-toggle" checked />
+          <input type="checkbox" id="item4" class="accordion-toggle" />
           <label for="item4" class="accordion-title" tabindex="0">自動返信AIの操作デモ</label>
           <div class="accordion-content">
             <video 
@@ -258,10 +265,11 @@
               muted 
               loop 
               playsinline 
-              preload="none">
+              preload="none"
+              style="max-width:100%; border-radius:8px; margin-top:12px;">
             </video>
             <p>チャットボットによる自動返信の流れを、DifyのUI上で体験できます。<br />
-            自動応答設定や実行フローがどのように動作するか、15秒のデモで確認できます。</p>
+              自動応答設定や実行フローがどのように動作するか、15秒のデモで確認できます。</p>
           </div>
         </div>
 
@@ -270,48 +278,53 @@
 
     <section>
       <h2>連絡先</h2>
-      <ul class="contact-list">
-        <li>メール: <a href="mailto:hamada.shinichiro9351@gmail.com">hamada.shinichiro9351@gmail.com</a></li>
-        <li>LINE: <a href="https://line.me/R/ti/p/@863nhxkq" target="_blank" rel="noopener noreferrer">公式LINE</a></li>
+      <ul class="contact">
+        <li>
+          <a href="mailto:hamada.shinichiro9351@gmail.com" aria-label="メールを送る">
+            <span class="icon-text">✉</span> hamada.shinichiro9351@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/R/ti/p/@863nhxkq" target="_blank" rel="noopener noreferrer" aria-label="LINEを開く">
+            <img src="line_icon.svg" alt="LINEロゴ" /> 公式LINE
+          </a>
+        </li>
       </ul>
     </section>
   </main>
 
-  <!-- チャットボットアイコンと埋め込み -->
-  <div id="chatbotIcon" style="
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #1976d2;
-    color: white;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    z-index: 1001;
-  " title="チャットボットを開く">💬</div>
-
-  <div id="chatbotContainer" class="chatbot-container" style="display:none;">
-    <div class="chatbot-header">
-      チャットボット
-      <span id="chatbotClose" class="chatbot-close" title="閉じる">&times;</span>
-    </div>
-    <iframe
-      src="https://udify.app/chatbot/UAM8T8LGkqvcLf7i"
-      class="chatbot-iframe"
-      title="チャットボット">
-    </iframe>
-  </div>
+  <!-- Dify チャットボット埋め込み -->
+  <script>
+    window.difyChatbotConfig = {
+      token: 'osvRoZ1mKcXdO0OM',
+      systemVariables: {
+        // user_id: 'YOU CAN DEFINE USER ID HERE',
+        // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+      },
+      userVariables: {
+        // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
+        // name: 'YOU CAN DEFINE USER NAME HERE',
+      },
+    }
+  </script>
+  <script
+    src="https://udify.app/embed.min.js"
+    id="osvRoZ1mKcXdO0OM"
+    defer>
+  </script>
+  <style>
+    #dify-chatbot-bubble-button {
+      background-color: #1C64F2 !important;
+    }
+    #dify-chatbot-bubble-window {
+      width: 24rem !important;
+      height: 40rem !important;
+    }
+  </style>
 
   <button id="scrollTopBtn" aria-label="ページトップへ">↑</button>
 
   <script>
-    // スクロールトップボタン表示制御
     const scrollTopBtn = document.getElementById("scrollTopBtn");
     window.onscroll = function () {
       if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -323,21 +336,6 @@
     scrollTopBtn.onclick = function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-
-    // チャットボット表示制御
-    const chatbotIcon = document.getElementById("chatbotIcon");
-    const chatbotContainer = document.getElementById("chatbotContainer");
-    const chatbotClose = document.getElementById("chatbotClose");
-
-    chatbotIcon.addEventListener('click', () => {
-      chatbotContainer.style.display = "block";
-      chatbotIcon.style.display = "none";
-    });
-
-    chatbotClose.addEventListener('click', () => {
-      chatbotContainer.style.display = "none";
-      chatbotIcon.style.display = "flex";
-    });
   </script>
 </body>
 </html>
