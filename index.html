@@ -11,7 +11,7 @@
     <div class="container">
       <img src="face.jpg" alt="プロフィール写真" class="profile-photo">
       <h1>濱田慎一郎</h1>
-      <p class="tagline">AIと共に、業務を一歩先へ</p>
+      <p class="tagline">中小企業と個人事業主のためのAI業務支援パートナー</p>
     </div>
   </header>
 
@@ -19,63 +19,53 @@
     <section>
       <h2>プロフィール</h2>
       <p>AI技術を業務に活かす、実践的な支援を提供します。<br>
-      プロンプト設計から業務フローの自動化、AI導入の現場実装まで、現実的かつ効果的なアプローチでご支援します。業務課題に寄り添い、無理なく成果につながる活用をご提案します。</p>
+      プロンプト設計から業務フローの自動化、AI導入の現場実装まで、現実的かつ効果的なアプローチでご支援します。</p>
     </section>
 
     <section>
       <h2>スキルセット</h2>
       <ul>
         <li>プロンプト設計</li>
-        <li>Dify</li>
-        <li>cursor</li>
-        <li>ChatGPT API / OpenAI</li>
-        <li>Claude</li>
-        <li>Gemini</li>
-        <li>Midjourney</li>
+        <li>Dify / ChatGPT API</li>
+        <li>cursor / Claude / Gemini</li>
+        <li>Midjourney / AI画像生成</li>
       </ul>
     </section>
 
     <section>
       <h2>制作物ギャラリー</h2>
       <div class="works-gallery">
+        <!-- アコーディオン1 -->
         <div class="accordion-item">
-          <input type="checkbox" id="item1" class="accordion-toggle">
-          <label for="item1" class="accordion-title">よくある退去時の疑問に、LINEでさっと答えるAIボット</label>
+          <input type="checkbox" id="item1" class="accordion-toggle" checked>
+          <label for="item1" class="accordion-title">よくある退去時の疑問にLINEで答えるAIボット</label>
           <div class="accordion-content">
-            <img src="taikyo_line_sample.png" alt="原状回復LINEボットの画面サンプル" class="zoomable-img" style="width:100%; max-width:320px; border-radius:8px; margin: 12px 0;">
-            <p>原状回復に関するルールや費用負担の考え方をLINEから質問できるチャットボット<br>ガイドラインに基づく情報整理と自然な対話形式で、実用的なAI活用を体験できます</p>
-            <div style="text-align:center; margin-top:16px;">
-              <a href="https://line.me/R/ti/p/@863nhxkq" target="_blank" rel="noopener noreferrer">
-                <button style="background-color: #4CAF50; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">AIチャットボット</button>
-              </a>
-            </div>
+            <img src="taikyo_line_sample.png" alt="LINEボット" class="zoomable-img">
+            <p>原状回復のガイドラインをLINEで案内するボット。自動応答で問合せ削減を実現します。</p>
+            <a class="cta-button" href="https://line.me/R/ti/p/@863nhxkq" target="_blank">AIチャットボットを見る</a>
           </div>
         </div>
+
+        <!-- アコーディオン2 -->
         <div class="accordion-item">
           <input type="checkbox" id="item2" class="accordion-toggle">
-          <label for="item2" class="accordion-title">社内規定を即時で回答。社内ナレッジのAI化サンプル</label>
+          <label for="item2" class="accordion-title">社内規定を即時回答するナレッジAI</label>
           <div class="accordion-content">
-            <img src="taikyo_sample.png" alt="社内ナレッジAI化サンプル画面" class="zoomable-img" style="width:100%; max-width:320px; border-radius:8px; margin: 12px 0;">
-            <p>経費精算ルールや就業規則に関する質問に自動応答するチャットフロー<br>ナレッジベースのFAQ対応や社内チャットボット化の基礎実装例として構築</p>
-            <div style="text-align:center; margin-top:16px;">
-              <a href="https://udify.app/chatbot/UAM8T8LGkqvcLf7i" target="_blank" rel="noopener noreferrer">
-                <button style="background-color: #4CAF50; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">経費精算・就業規定チャットフロー</button>
-              </a>
-            </div>
+            <img src="taikyo_sample.png" alt="社内規定AI" class="zoomable-img">
+            <p>社内ナレッジベースを自動応答化。社員からのよくある問合せに即座に対応。</p>
+            <a class="cta-button" href="https://udify.app/chatbot/UAM8T8LGkqvcLf7i" target="_blank">社内規定チャットフロー</a>
           </div>
         </div>
+
+        <!-- アコーディオン3 -->
         <div class="accordion-item">
           <input type="checkbox" id="item3" class="accordion-toggle">
-          <label for="item3" class="accordion-title">会議音声をアップロードするだけで議事録作成をAIが代行し、記録の負担を軽減</label>
+          <label for="item3" class="accordion-title">会議音声をアップロードするだけで議事録化</label>
           <div class="accordion-content">
-            <img src="gijiroku_sample2.png" alt="AI議事録作成画面サンプル" class="zoomable-img" style="width:100%; max-width:320px; border-radius:8px; margin: 12px 0;">
-            <img src="gijiroku_sample3.png" alt="AI議事録作成画面サンプル2" class="zoomable-img" style="width:100%; max-width:320px; border-radius:8px; margin: 12px 0;">
-            <p>音声ファイルをアップロードするだけで、AIが内容を要約・整形し、議事録を自動作成します<br>要点抽出やフォーマット整形まで含めた、実用的な業務効率化ワークフローです</p>
-            <div style="text-align:center; margin-top:16px;">
-              <a href="https://udify.app/workflow/c5KoqdWR4a8mgKwP" target="_blank" rel="noopener noreferrer">
-                <button style="background-color: #4CAF50; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">議事録作成AIワークフロー</button>
-              </a>
-            </div>
+            <img src="gijiroku_sample2.png" alt="議事録AI" class="zoomable-img">
+            <img src="gijiroku_sample3.png" alt="議事録AI2" class="zoomable-img">
+            <p>音声から議事録を自動生成。要点抽出・フォーマット化まで自動処理可能。</p>
+            <a class="cta-button" href="https://udify.app/workflow/c5KoqdWR4a8mgKwP" target="_blank">議事録ワークフローを見る</a>
           </div>
         </div>
       </div>
@@ -83,18 +73,14 @@
 
     <section>
       <h2>お問い合わせ</h2>
-      <p>ご相談・ご依頼はメールまたはLINEからお気軽にご連絡ください。</p>
+      <p>ご相談・ご依頼はお気軽にご連絡ください。</p>
       <ul class="contact">
         <li>
-          <a href="mailto:hamada.shinichiro9351@gmail.com">
-            <span style="font-size: 24px; vertical-align: middle; margin-right: 8px;">✉️</span>
-            メールで連絡
-          </a>
+          <a href="mailto:hamada.shinichiro9351@gmail.com">✉️ メールで連絡</a>
         </li>
         <li>
           <a href="https://line.me/ti/p/1bxzlr18OL" target="_blank">
-            <img src="line_logo.png" alt="LINEで連絡" style="width:32px; height:32px; vertical-align:middle; margin-right:8px;">
-            LINEで連絡
+            <img src="line_logo.png" alt="LINEで連絡" style="width:24px; vertical-align:middle;"> LINEで連絡
           </a>
         </li>
       </ul>
@@ -107,50 +93,19 @@
     </div>
   </footer>
 
-  <!-- Difyチャットボット埋め込み -->
-<script>
- window.difyChatbotConfig = {
-  token: 'osvRoZ1mKcXdO0OM',
-  systemVariables: {
-    // user_id: 'YOU CAN DEFINE USER ID HERE',
-    // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
-  },
-  userVariables: {
-    // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
-    // name: 'YOU CAN DEFINE USER NAME HERE',
-  },
- }
-</script>
-<script
- src="https://udify.app/embed.min.js"
- id="osvRoZ1mKcXdO0OM"
- defer>
-</script>
-<style>
-  #dify-chatbot-bubble-button {
-    background-color: #1C64F2 !important;
-  }
-  #dify-chatbot-bubble-window {
-      width: 32rem !important;
-      height: 48rem !important;
-    }
-  </style>
+  <!-- モーダル拡大 -->
+  <div class="modal-img-bg"></div>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       let modalBg = document.querySelector('.modal-img-bg');
-      if (!modalBg) {
-        modalBg = document.createElement('div');
-        modalBg.className = 'modal-img-bg';
-        document.body.appendChild(modalBg);
-      }
       document.querySelectorAll('.zoomable-img').forEach(img => {
         img.style.cursor = 'zoom-in';
-        img.addEventListener('click', function() {
+        img.addEventListener('click', function () {
           modalBg.innerHTML = '<img src="' + img.src + '" alt="拡大画像">';
           modalBg.classList.add('active');
         });
       });
-      modalBg.addEventListener('click', function() {
+      modalBg.addEventListener('click', function () {
         modalBg.classList.remove('active');
         modalBg.innerHTML = '';
       });
