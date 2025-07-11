@@ -138,13 +138,10 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 16px;
 }
-
-/* ここがテキスト中央揃え */
+/* ここで段落を中央揃えに */
 .accordion-content p {
-  text-align: center;
-  white-space: pre-line; /* 改行も反映 */
+  text-align: center !important;
 }
-
 .accordion-toggle:checked + .accordion-title + .accordion-content {
   max-height: 2000px;
   padding: 16px;
