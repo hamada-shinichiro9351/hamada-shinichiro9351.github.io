@@ -1,82 +1,98 @@
+/* リセット */
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
   background: #f4f7fa;
   color: #222;
   margin: 0;
 }
+
 .container {
   max-width: 800px;
   margin: auto;
   padding: 24px;
 }
+
 header {
   background: #1976d2;
   color: #fff;
-  padding: 48px 0 32px;
+  padding: 48px 0 32px 0;
   text-align: center;
 }
+
 header h1 {
   margin: 0;
   font-size: 2.5rem;
+  letter-spacing: 0.05em;
 }
+
 .tagline {
   margin-top: 12px;
   font-size: 1.2rem;
   font-weight: 300;
 }
+
 main section {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   margin-bottom: 32px;
   padding: 32px 24px;
+  animation: fadeIn 0.6s ease-in;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 h2 {
-  font-size: 1.6rem;
-  font-weight: 600;
   color: #2c3e50;
   border-left: 4px solid #2c3e50;
   padding-left: 0.7em;
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
+
 ul {
   padding-left: 1.5em;
 }
+
 a {
-  color: #1976d2;
+  color: #2c3e50;
   text-decoration: none;
+  transition: all 0.2s;
 }
+
 a:hover {
+  color: #1976d2;
   text-decoration: underline;
   opacity: 0.85;
 }
-.cta-button {
-  display: inline-block;
-  background-color: #1976d2;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  margin-top: 12px;
-  font-weight: bold;
-  transition: all 0.2s ease;
-}
-.cta-button:hover {
-  background-color: #1565c0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+
 .contact {
   list-style: none;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
 }
+
 .contact a {
+  color: #1976d2;
   font-weight: bold;
 }
+
+.contact a:hover {
+  color: #1565c0;
+}
+
 footer {
   background: #eee;
   text-align: center;
@@ -84,64 +100,75 @@ footer {
   padding: 20px 0;
   margin-top: 40px;
 }
-.profile-photo {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 12px;
-  border: 3px solid #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
+
+main section:nth-of-type(1) { background: #fafdff; }
+main section:nth-of-type(2) { background: #f5faff; }
+main section:nth-of-type(3) { background: #f8fbff; }
+main section:nth-of-type(4) { background: #ffffff; }
 
 /* アコーディオン */
 .accordion-item {
   margin-bottom: 20px;
 }
+
 .accordion-toggle {
   display: none;
 }
+
 .accordion-title {
   display: flex;
   align-items: center;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.2em;
   cursor: pointer;
   background: #e3f2fd;
   padding: 12px 16px;
   border-radius: 8px;
   transition: background 0.2s;
+  user-select: none;
 }
+
 .accordion-title:hover {
   background: #bbdefb;
 }
+
+/* キーボードフォーカス時のアウトライン */
+.accordion-title:focus {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+
+/* 矢印（▶）作成 */
 .accordion-title::before {
-  content: '';
+  content: '▶';
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid #333;
-  border-right: 2px solid #333;
-  transform: rotate(45deg); /* ▶ 初期状態 */
   margin-right: 12px;
+  font-size: 1.2em;
   transition: transform 0.2s ease;
+  transform-origin: center;
 }
+
+/* チェック時に矢印を下向きに回転 */
 .accordion-toggle:checked + .accordion-title::before {
-  transform: rotate(135deg); /* ▼ 展開時 */
+  transform: rotate(90deg);
 }
+
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s;
+  transition: max-height 0.3s ease, padding 0.3s ease;
   background: #fff;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 16px;
 }
+
 .accordion-toggle:checked + .accordion-title + .accordion-content {
-  max-height: 2000px;
+  max-height: 2000px; /* たっぷり余裕持たせ */
   padding: 16px;
 }
+
+/* 画像ズーム用 */
 .zoomable-img {
   width: 100%;
   max-width: 320px;
@@ -152,7 +179,18 @@ footer {
   cursor: zoom-in;
 }
 
-/* モーダル */
+/* プロフィール写真 */
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* モーダル（拡大画像表示） */
 .modal-img-bg {
   display: none;
   position: fixed;
@@ -162,9 +200,11 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 .modal-img-bg.active {
   display: flex;
 }
+
 .modal-img-bg img {
   max-width: 90vw;
   max-height: 80vh;
@@ -172,19 +212,39 @@ footer {
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
-/* レスポンシブ */
+/* CTAボタン共通 */
+.cta-button {
+  background-color: #1976d2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #1565c0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+/* レスポンシブ対応 */
 @media (max-width: 600px) {
   .container {
-    padding: 12px;
+    padding: 8px;
   }
   main section {
-    padding: 24px 12px;
+    padding: 18px 8px;
+  }
+  header {
+    padding: 32px 0 20px 0;
   }
   header h1 {
-    font-size: 1.8rem;
-  }
-  .cta-button {
-    width: 100%;
-    text-align: center;
+    font-size: 1.5rem;
   }
 }
