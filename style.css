@@ -159,9 +159,7 @@ main section:nth-of-type(4) { background: #ffffff; }
   border-radius: 0 0 8px 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 16px;
-
-  /* 中央寄せスタイル */
-  text-align: center;
+  text-align: center; /* 追加: 説明文とボタンを中央寄せ */
 }
 
 .accordion-content p {
@@ -226,27 +224,39 @@ main section:nth-of-type(4) { background: #ffffff; }
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 8px;
-  }
-  main section {
-    padding: 18px 8px;
-  }
-  header {
-    padding: 32px 0 20px 0;
-  }
-  header h1 {
-    font-size: 1.5rem;
-  }
-}
-
-/* Difyチャットボットの位置調整 */
+/* Difyチャット調整 */
 #dify-chatbot-bubble-button {
-  bottom: 100px !important;
+  bottom: 140px !important;
   right: 20px !important;
 }
 
 #dify-chatbot-bubble-window {
-  margin-bottom: 100px !important;
+  margin-bottom: 140px !important;
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+  .container {
+    padding: 8px;
+  }
+
+  main section {
+    padding: 18px 8px;
+  }
+
+  header {
+    padding: 32px 0 20px 0;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  #dify-chatbot-bubble-button {
+    bottom: 100px !important;
+  }
+
+  #dify-chatbot-bubble-window {
+    margin-bottom: 100px !important;
+  }
 }
