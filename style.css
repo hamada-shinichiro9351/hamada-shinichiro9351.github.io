@@ -138,14 +138,24 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 16px;
 }
-/* ここで段落を中央揃えに */
-.accordion-content p {
-  text-align: center !important;
-}
+
+/* 説明文とボタンを中央揃え */
 .accordion-toggle:checked + .accordion-title + .accordion-content {
   max-height: 2000px;
   padding: 16px;
 }
+.accordion-content p {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.accordion-content div {
+  text-align: center;
+}
+.accordion-content a > button {
+  margin: 0 auto;
+  display: inline-block;
+}
+
 .zoomable-img {
   width: 100%;
   max-width: 320px;
