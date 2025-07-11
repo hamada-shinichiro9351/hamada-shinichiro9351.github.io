@@ -116,12 +116,19 @@ footer {
   background: #bbdefb;
 }
 .accordion-title::before {
-  content: '▶';
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(45deg); /* ▶ 初期状態 */
   margin-right: 12px;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
+
 .accordion-toggle:checked + .accordion-title::before {
-  content: '▼';
+  transform: rotate(135deg); /* ▼ 展開時 */
 }
 .accordion-content {
   max-height: 0;
