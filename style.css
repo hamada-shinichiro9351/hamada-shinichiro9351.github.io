@@ -133,14 +133,17 @@ footer {
   padding: 0 16px;
 }
 .accordion-toggle:checked + .accordion-title + .accordion-content {
-  max-height: 1000px;
+  max-height: 2000px;
   padding: 16px;
 }
 .zoomable-img {
   width: 100%;
-  max-width: 100%;
+  max-width: 320px;
+  height: auto;
   border-radius: 8px;
-  margin-top: 16px;
+  margin: 12px auto;
+  display: block;
+  cursor: zoom-in;
 }
 
 /* モーダル */
