@@ -296,6 +296,24 @@
           </div>
         </div>
 
+        <div class="accordion-item">
+          <input type="checkbox" id="item4" class="accordion-toggle" />
+          <label for="item4" class="accordion-title" tabindex="0">領収書自動管理ツール</label>
+          <div class="accordion-content">
+            <video controls style="width:100%; max-width:320px; border-radius:8px; margin:12px auto; display:block;">
+              <source src="dify_demo.mp4" type="video/mp4">
+              お使いのブラウザは動画タグに対応していません。
+            </video>
+            <p>領収書の画像をアップロードするだけで、AIが日付・金額・店舗名などを自動で抽出し、一覧管理します。<br />
+            経費精算や帳簿管理の手間を大幅に削減できる業務効率化ツールです。</p>
+            <div style="text-align:center; margin-top:16px;">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <button class="cta-button">デモを見る</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -324,6 +342,9 @@
       <p>&copy; 2025 濱田慎一郎</p>
     </div>
   </footer>
+
+  <!-- 上に戻るボタン -->
+  <button id="backToTopBtn" style="display:none; position:fixed; left:50%; transform:translateX(-50%); bottom:32px; z-index:2000; background:#1976d2; color:#fff; border:none; border-radius:50%; width:56px; height:56px; font-size:2rem; box-shadow:0 2px 8px rgba(0,0,0,0.15); cursor:pointer; transition:opacity 0.3s;">↑</button>
 
   <!-- Difyチャットボット埋め込み -->
   <script>
@@ -359,6 +380,20 @@
       modalBg.addEventListener('click', function() {
         modalBg.classList.remove('active');
         modalBg.innerHTML = '';
+      });
+
+      // 上に戻るボタンの表示制御
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      window.addEventListener('scroll', function() {
+        // ページの一番下まで来たら表示
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+          backToTopBtn.style.display = 'block';
+        } else {
+          backToTopBtn.style.display = 'none';
+        }
+      });
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   </script>
