@@ -237,26 +237,61 @@ main section:nth-of-type(4) { background: #ffffff; }
 /* レスポンシブ */
 @media (max-width: 600px) {
   .container {
-    padding: 8px;
-  }
-
-  main section {
-    padding: 18px 8px;
+    padding: 12px;
   }
 
   header {
-    padding: 32px 0 20px 0;
+    padding: 28px 0 18px 0;
   }
 
   header h1 {
-    font-size: 1.5rem;
+    font-size: 2rem; /* 32px にアップ */
   }
 
-  #dify-chatbot-bubble-button {
-    bottom: 100px !important;
+  .tagline {
+    font-size: 1.1rem; /* 約17.6px、ややスッキリに */
   }
 
-  #dify-chatbot-bubble-window {
-    margin-bottom: 100px !important;
+  body {
+    font-size: 15px; /* 通常本文サイズ明示 */
+    line-height: 1.7;
+  }
+
+  main section {
+    padding: 20px 12px;
+  }
+
+  h2 {
+    font-size: 1.4rem; /* 約22.4px、メリハリ維持 */
+  }
+
+  .accordion-title {
+    font-size: 1.1rem; /* やや小ぶりで統一感を */
+    padding: 10px 14px;
+  }
+
+  .accordion-content {
+    padding: 0 12px;
+  }
+
+  .cta-button {
+    font-size: 1.05rem; /* 約16.8px */
+    padding: 14px 20px; /* タップしやすく */
+    width: 100%; /* 横幅広くして押しやすく */
+    max-width: 300px;
+  }
+
+  .zoomable-img {
+    max-width: 100%;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contact a {
+    font-size: 1rem;
   }
 }
