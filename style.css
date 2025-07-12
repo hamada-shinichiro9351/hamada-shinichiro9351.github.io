@@ -7,8 +7,6 @@ body {
   background: #f4f7fa;
   color: #222;
   margin: 0;
-  font-size: 16px;
-  line-height: 1.7;
 }
 
 .container {
@@ -18,7 +16,7 @@ body {
 }
 
 header {
-  background: #0078D4;
+  background: #1976d2;
   color: #fff;
   padding: 48px 0 32px 0;
   text-align: center;
@@ -26,15 +24,14 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   letter-spacing: 0.05em;
-  font-weight: 700;
 }
 
 .tagline {
   margin-top: 12px;
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 
 main section {
@@ -52,25 +49,13 @@ main section {
 }
 
 h2 {
-  color: #0078D4;
-  border-left: 4px solid #0078D4;
+  color: #2c3e50;
+  border-left: 4px solid #2c3e50;
   padding-left: 0.7em;
   margin-top: 0;
   margin-bottom: 1em;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5em;
-  color: #444;
+  font-size: 1.6rem;
   font-weight: 600;
-}
-
-p {
-  font-size: 1rem;
-  margin-bottom: 1em;
 }
 
 ul {
@@ -86,21 +71,15 @@ ul {
 }
 
 a {
-  color: #0078D4;
+  color: #2c3e50;
   text-decoration: none;
   transition: all 0.2s;
 }
 
-a:hover,
-a:focus {
-  color: #005bb5;
+a:hover {
+  color: #1976d2;
   text-decoration: underline;
-  opacity: 0.9;
-}
-
-a:focus {
-  outline: 2px dashed #005bb5;
-  outline-offset: 2px;
+  opacity: 0.85;
 }
 
 .contact {
@@ -113,12 +92,12 @@ a:focus {
 }
 
 .contact a {
-  color: #0078D4;
+  color: #1976d2;
   font-weight: bold;
 }
 
 .contact a:hover {
-  color: #005bb5;
+  color: #1565c0;
 }
 
 footer {
@@ -135,14 +114,8 @@ main section:nth-of-type(3) { background: #f8fbff; }
 main section:nth-of-type(4) { background: #ffffff; }
 
 /* アコーディオン */
-.accordion-item {
-  margin-bottom: 20px;
-}
-
-.accordion-toggle {
-  display: none;
-}
-
+.accordion-item { margin-bottom: 20px; }
+.accordion-toggle { display: none; }
 .accordion-title {
   display: flex;
   align-items: center;
@@ -154,51 +127,36 @@ main section:nth-of-type(4) { background: #ffffff; }
   border-radius: 8px;
   transition: background 0.2s;
 }
-
 .accordion-title:hover {
   background: #bbdefb;
 }
-
+/* キーボードフォーカス時のアウトライン */
+.accordion-title:focus {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+/* 矢印（▶）作成 */
 .accordion-title::before {
   content: '▶';
   display: inline-block;
   margin-right: 12px;
   font-size: 1.2em;
-  transition: transform 0.2s;
+  transition: opacity 0.2s ease;
 }
-
+/* チェック時に矢印を「▼」に切り替え */
 .accordion-toggle:checked + .accordion-title::before {
   content: '▼';
-  transform: rotate(90deg);
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s, padding 0.3s;
+  transition: max-height 0.3s ease, padding 0.3s ease;
   background: #fff;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 16px;
-  text-align: center;
 }
-
-.accordion-content p {
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-.accordion-content a {
-  display: inline-block;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.accordion-content button {
-  display: inline-block;
-  margin: 0 auto;
-}
-
 .accordion-toggle:checked + .accordion-title + .accordion-content {
   max-height: 2000px;
   padding: 16px;
@@ -245,74 +203,36 @@ main section:nth-of-type(4) { background: #ffffff; }
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
-/* Difyチャット調整 */
-#dify-chatbot-bubble-button {
-  bottom: 140px !important;
-  right: 20px !important;
+/* ボタン共通化 */
+.cta-button {
+  background-color: #1976d2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+.cta-button:hover {
+  background-color: #1565c0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
 }
 
-#dify-chatbot-bubble-window {
-  margin-bottom: 140px !important;
-}
-
-/* レスポンシブ */
 @media (max-width: 600px) {
-  .container {
-    padding: 12px;
-  }
-
-  header {
-    padding: 28px 0 18px 0;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .tagline {
-    font-size: 1.1rem;
-  }
-
-  body {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  main section {
-    padding: 20px 12px;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  .accordion-title {
-    font-size: 1.1rem;
-    padding: 10px 14px;
-  }
-
-  .accordion-content {
-    padding: 0 12px;
-  }
-
-  .cta-button {
-    font-size: 1.05rem;
-    padding: 14px 20px;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .zoomable-img {
-    max-width: 100%;
-  }
-
-  .contact {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .contact a {
-    font-size: 1rem;
-  }
+  .container { padding: 8px; }
+  main section { padding: 18px 8px; }
+  header { padding: 32px 0 20px 0; }
+  header h1 { font-size: 1.5rem; }
+  .tagline { font-size: 1rem; }
+  /* スマートフォンでの改行改善 */
+  p { word-wrap: break-word; overflow-wrap: break-word; }
+  /* ヘッダーの説明文の改行制御 */
+  header p { line-height: 1.6; }
+  /* プロフィール文の改行制御 */
+  main section p { line-height: 1.7; }
 }
