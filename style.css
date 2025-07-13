@@ -62,6 +62,26 @@ ul {
   padding-left: 1.5em;
 }
 
+.cta-button {
+  background-color: #1976d2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #1565c0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
 .project {
   margin-top: 16px;
   padding: 16px;
@@ -115,60 +135,34 @@ main section:nth-of-type(4) { background: #ffffff; }
 
 /* アコーディオン */
 .accordion-container {
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .accordion-item {
-  border-radius: 10px;
-  margin-bottom: 16px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  margin-bottom: 20px;
 }
 
 .accordion-header {
-  background: #e3f2fd;
-  padding: 14px 18px;
-  font-weight: bold;
   cursor: pointer;
+  background-color: #e3f2fd;
+  padding: 14px 16px;
+  font-weight: bold;
+  border-radius: 8px;
   transition: background 0.2s;
-  position: relative;
 }
 
-.accordion-header::before {
-  content: '▶';
-  display: inline-block;
-  margin-right: 12px;
-  transition: transform 0.2s;
-}
-
-.accordion-header.active::before {
-  content: '▼';
-  transform: rotate(90deg);
+.accordion-header:hover {
+  background-color: #bbdefb;
 }
 
 .accordion-body {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  max-height: 0;
+  transition: max-height 0.3s ease;
   background: #fff;
   padding: 0 16px;
-  text-align: center;
-}
-
-.accordion-body p {
-  margin: 16px 0;
-  line-height: 1.5;
-}
-
-.accordion-body a {
-  display: inline-block;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.accordion-body button {
-  display: inline-block;
-  margin: 0 auto;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .accordion-header.active + .accordion-body {
@@ -196,6 +190,7 @@ main section:nth-of-type(4) { background: #ffffff; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* モーダル画像拡大 */
 .modal-img-bg {
   display: none;
   position: fixed;
@@ -227,7 +222,25 @@ main section:nth-of-type(4) { background: #ffffff; }
   margin-bottom: 140px !important;
 }
 
-/* レスポンシブ */
+/* トップへ戻る矢印ボタン */
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  background: #1976d2;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* レスポンシブ対応 */
 @media (max-width: 600px) {
   .container {
     padding: 12px;
@@ -256,15 +269,6 @@ main section:nth-of-type(4) { background: #ffffff; }
 
   h2 {
     font-size: 1.4rem;
-  }
-
-  .accordion-header {
-    font-size: 1.1rem;
-    padding: 10px 14px;
-  }
-
-  .accordion-body {
-    padding: 0 12px;
   }
 
   .cta-button {
