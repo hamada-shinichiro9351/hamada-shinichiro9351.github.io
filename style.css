@@ -82,26 +82,6 @@ a:hover {
   opacity: 0.85;
 }
 
-.cta-button {
-  background-color: #1976d2;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  display: inline-block;
-  text-align: center;
-}
-
-.cta-button:hover {
-  background-color: #1565c0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
-}
-
 .contact {
   list-style: none;
   padding: 0;
@@ -133,29 +113,83 @@ main section:nth-of-type(2) { background: #f5faff; }
 main section:nth-of-type(3) { background: #f8fbff; }
 main section:nth-of-type(4) { background: #ffffff; }
 
-/* 画像（制作物） */
+/* アコーディオン */
+.accordion-container {
+  margin-top: 24px;
+}
+
+.accordion-item {
+  margin-bottom: 20px;
+}
+
+.accordion-header {
+  background: #e3f2fd;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.accordion-header:hover {
+  background: #bbdefb;
+}
+
+.accordion-header::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 12px;
+  transition: transform 0.2s;
+}
+
+.accordion-header.active::before {
+  content: '▼';
+  transform: rotate(90deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 0 16px;
+  text-align: center;
+}
+
+.accordion-body p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.accordion-body a {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.accordion-body button {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.accordion-header.active + .accordion-body {
+  max-height: 2000px;
+  padding: 16px;
+}
+
 .zoomable-img {
   width: 100%;
   max-width: 320px;
   height: auto;
-  object-fit: contain;
   border-radius: 8px;
   margin: 12px auto;
   display: block;
   cursor: zoom-in;
 }
 
-/* 動画 */
-video {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  border-radius: 8px;
-  margin: 12px auto;
-  display: block;
-}
-
-/* プロフィール画像 */
 .profile-photo {
   width: 140px;
   height: 140px;
@@ -163,8 +197,17 @@ video {
   border-radius: 50%;
   margin-bottom: 12px;
   border: 3px solid #fff;
-  display: block;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Difyチャット調整 */
+#dify-chatbot-bubble-button {
+  bottom: 140px !important;
+  right: 20px !important;
+}
+
+#dify-chatbot-bubble-window {
+  margin-bottom: 140px !important;
 }
 
 /* レスポンシブ */
@@ -198,6 +241,15 @@ video {
     font-size: 1.4rem;
   }
 
+  .accordion-header {
+    font-size: 1.1rem;
+    padding: 10px 14px;
+  }
+
+  .accordion-body {
+    padding: 0 12px;
+  }
+
   .cta-button {
     font-size: 1.05rem;
     padding: 14px 20px;
@@ -205,8 +257,7 @@ video {
     max-width: 300px;
   }
 
-  .zoomable-img,
-  video {
+  .zoomable-img {
     max-width: 100%;
   }
 
