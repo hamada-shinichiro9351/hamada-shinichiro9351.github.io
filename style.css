@@ -198,11 +198,13 @@ main section:nth-of-type(4) { background: #ffffff; }
   cursor: zoom-in;
 }
 
-/* プロフィール画像：四角で少し大きめに */
+/* プロフィール画像 */
 .profile-photo {
-  width: 180px;
+  width: 160px;
   height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 50%;
   border: 3px solid #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   display: block;
@@ -231,25 +233,24 @@ main section:nth-of-type(4) { background: #ffffff; }
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
-/* CTAボタン */
+/* CTAボタン（無料相談） */
 .cta-button {
-  background-color: #1976d2;
+  background-color: #ff6f00;
   color: white;
-  padding: 12px 24px;
-  border: 2px solid #1565c0;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
   font-weight: bold;
-  transition: all 0.2s ease;
-  display: inline-block;
-  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .cta-button:hover {
-  background-color: #1565c0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #e65100;
   transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
 /* Difyチャット調整 */
@@ -324,7 +325,8 @@ main section:nth-of-type(4) { background: #ffffff; }
   }
 
   .profile-photo {
-    width: 140px;
+    width: 120px;
     height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
