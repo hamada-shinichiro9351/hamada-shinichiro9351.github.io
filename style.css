@@ -9,6 +9,12 @@ body {
   margin: 0;
 }
 
+/* 選択時の色 */
+::selection {
+  background: #1976d2;
+  color: white;
+}
+
 .container {
   max-width: 800px;
   margin: auto;
@@ -159,7 +165,7 @@ main section:nth-of-type(4) { background: #ffffff; }
   border-radius: 0 0 8px 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 16px;
-  text-align: center; /* 追加: 説明文とボタンを中央寄せ */
+  text-align: center;
 }
 
 .accordion-content p {
@@ -178,8 +184,9 @@ main section:nth-of-type(4) { background: #ffffff; }
   margin: 0 auto;
 }
 
+/* 高さ調整（表示されない問題対応） */
 .accordion-toggle:checked + .accordion-title + .accordion-content {
-  max-height: 2000px;
+  max-height: 4000px;
   padding: 16px;
 }
 
@@ -224,6 +231,27 @@ main section:nth-of-type(4) { background: #ffffff; }
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
+/* CTAボタン */
+.cta-button {
+  background-color: #1976d2;
+  color: white;
+  padding: 12px 24px;
+  border: 2px solid #1565c0;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #1565c0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
 /* Difyチャット調整 */
 #dify-chatbot-bubble-button {
   bottom: 140px !important;
@@ -245,15 +273,15 @@ main section:nth-of-type(4) { background: #ffffff; }
   }
 
   header h1 {
-    font-size: 2rem; /* 32px にアップ */
+    font-size: 2rem;
   }
 
   .tagline {
-    font-size: 1.1rem; /* 約17.6px、ややスッキリに */
+    font-size: 1.1rem;
   }
 
   body {
-    font-size: 15px; /* 通常本文サイズ明示 */
+    font-size: 15px;
     line-height: 1.7;
   }
 
@@ -262,11 +290,11 @@ main section:nth-of-type(4) { background: #ffffff; }
   }
 
   h2 {
-    font-size: 1.4rem; /* 約22.4px、メリハリ維持 */
+    font-size: 1.4rem;
   }
 
   .accordion-title {
-    font-size: 1.1rem; /* やや小ぶりで統一感を */
+    font-size: 1.1rem;
     padding: 10px 14px;
   }
 
@@ -275,9 +303,9 @@ main section:nth-of-type(4) { background: #ffffff; }
   }
 
   .cta-button {
-    font-size: 1.05rem; /* 約16.8px */
-    padding: 14px 20px; /* タップしやすく */
-    width: 100%; /* 横幅広くして押しやすく */
+    font-size: 1.05rem;
+    padding: 14px 20px;
+    width: 100%;
     max-width: 300px;
   }
 
