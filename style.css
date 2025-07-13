@@ -2,17 +2,16 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: #1976d2;
+  color: white;
+}
+
 body {
   font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
   background: #f4f7fa;
   color: #222;
   margin: 0;
-}
-
-/* 選択時の色 */
-::selection {
-  background: #1976d2;
-  color: white;
 }
 
 .container {
@@ -184,7 +183,6 @@ main section:nth-of-type(4) { background: #ffffff; }
   margin: 0 auto;
 }
 
-/* 高さ調整（表示されない問題対応） */
 .accordion-toggle:checked + .accordion-title + .accordion-content {
   max-height: 4000px;
   padding: 16px;
@@ -203,6 +201,7 @@ main section:nth-of-type(4) { background: #ffffff; }
 .profile-photo {
   width: 140px;
   height: 140px;
+  max-width: 35vw;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 12px;
@@ -262,7 +261,7 @@ main section:nth-of-type(4) { background: #ffffff; }
   margin-bottom: 140px !important;
 }
 
-/* レスポンシブ */
+/* レスポンシブ対応 */
 @media (max-width: 600px) {
   .container {
     padding: 12px;
@@ -321,5 +320,10 @@ main section:nth-of-type(4) { background: #ffffff; }
 
   .contact a {
     font-size: 1rem;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 100px;
   }
 }
