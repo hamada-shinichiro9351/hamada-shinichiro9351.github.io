@@ -198,13 +198,11 @@ main section:nth-of-type(4) { background: #ffffff; }
   cursor: zoom-in;
 }
 
-/* 🔵 修正済み：プロフィール写真 */
+/* プロフィール画像：四角で少し大きめに */
 .profile-photo {
-  width: 140px;
+  width: 180px;
   height: auto;
-  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 50%;
   border: 3px solid #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   display: block;
@@ -326,8 +324,7 @@ main section:nth-of-type(4) { background: #ffffff; }
   }
 
   .profile-photo {
-    width: 100px;
+    width: 140px;
     height: auto;
-    aspect-ratio: 1 / 1;
   }
 }
