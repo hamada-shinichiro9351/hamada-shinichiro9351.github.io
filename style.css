@@ -108,15 +108,14 @@ header h1 {
   margin: 16px 0;
 }
 
-/* 画像調整（バグ修正済み） */
+/* 画像調整 */
 .zoomable-img {
-  display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
-  margin: 0 auto 16px;
-  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   cursor: zoom-in;
 }
 
