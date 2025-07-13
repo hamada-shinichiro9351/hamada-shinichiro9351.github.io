@@ -87,18 +87,31 @@ a:hover {
   opacity: 0.85;
 }
 
+/* 横並び対応済 */
 .contact {
   list-style: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 24px;
   align-items: center;
 }
 
+.contact li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .contact a {
-  color: #1976d2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: bold;
+  color: #1976d2;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
 .contact a:hover {
@@ -198,10 +211,9 @@ main section:nth-of-type(4) { background: #ffffff; }
   cursor: zoom-in;
 }
 
-/* プロフィール画像 */
+/* プロフィール写真 */
 .profile-photo {
   width: 160px;
-  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
@@ -212,6 +224,7 @@ main section:nth-of-type(4) { background: #ffffff; }
   margin: 0 auto 12px;
 }
 
+/* モーダル画像拡大 */
 .modal-img-bg {
   display: none;
   position: fixed;
@@ -233,24 +246,26 @@ main section:nth-of-type(4) { background: #ffffff; }
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
-/* CTAボタン（無料相談） */
+/* CTAボタン */
 .cta-button {
-  background-color: #ff6f00;
+  background-color: #1976d2;
   color: white;
   padding: 14px 28px;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: bold;
+  border: 2px solid #1565c0;
+  border-radius: 8px;
+  font-size: 1.05rem;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .cta-button:hover {
-  background-color: #e65100;
+  background-color: #1565c0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
 /* Difyチャット調整 */
@@ -326,7 +341,6 @@ main section:nth-of-type(4) { background: #ffffff; }
 
   .profile-photo {
     width: 120px;
-    height: auto;
     aspect-ratio: 1 / 1;
   }
 }
