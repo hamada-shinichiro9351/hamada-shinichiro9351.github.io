@@ -116,71 +116,52 @@ main section:nth-of-type(4) { background: #ffffff; }
 /* アコーディオン */
 .accordion-item {
   margin-bottom: 20px;
-}
-
-.accordion-toggle {
-  display: none;
-}
-
-.accordion-title {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.2em;
-  cursor: pointer;
-  background: #e3f2fd;
-  padding: 12px 16px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  transition: background 0.2s;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
-.accordion-title:hover {
-  background: #bbdefb;
+.accordion-header {
+  padding: 16px;
+  background-color: #e3f2fd;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.accordion-title::before {
-  content: '▶';
-  display: inline-block;
-  margin-right: 12px;
-  font-size: 1.2em;
-  transition: transform 0.2s;
+.accordion-header:hover {
+  background-color: #bbdefb;
 }
 
-.accordion-toggle:checked + .accordion-title::before {
-  content: '▼';
-  transform: rotate(90deg);
+.accordion-header.active {
+  background-color: #bbdefb;
 }
 
-.accordion-content {
+.accordion-body {
+  padding: 0 16px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s, padding 0.3s;
+  transition: max-height 0.3s ease;
+  text-align: center;
   background: #fff;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 0 16px;
-  text-align: center; /* 追加: 説明文とボタンを中央寄せ */
 }
 
-.accordion-content p {
+.accordion-body p {
   margin-bottom: 12px;
   line-height: 1.5;
 }
 
-.accordion-content a {
+.accordion-body a {
   display: inline-block;
+  margin: 0 auto;
   text-align: center;
-  margin: 0 auto;
 }
 
-.accordion-content button {
+.accordion-body button {
   display: inline-block;
   margin: 0 auto;
-}
-
-.accordion-toggle:checked + .accordion-title + .accordion-content {
-  max-height: 2000px;
-  padding: 16px;
 }
 
 .zoomable-img {
@@ -245,15 +226,15 @@ main section:nth-of-type(4) { background: #ffffff; }
   }
 
   header h1 {
-    font-size: 2rem; /* 32px にアップ */
+    font-size: 2rem;
   }
 
   .tagline {
-    font-size: 1.1rem; /* 約17.6px、ややスッキリに */
+    font-size: 1.1rem;
   }
 
   body {
-    font-size: 15px; /* 通常本文サイズ明示 */
+    font-size: 15px;
     line-height: 1.7;
   }
 
@@ -262,22 +243,22 @@ main section:nth-of-type(4) { background: #ffffff; }
   }
 
   h2 {
-    font-size: 1.4rem; /* 約22.4px、メリハリ維持 */
+    font-size: 1.4rem;
   }
 
-  .accordion-title {
-    font-size: 1.1rem; /* やや小ぶりで統一感を */
+  .accordion-header {
+    font-size: 1.1rem;
     padding: 10px 14px;
   }
 
-  .accordion-content {
+  .accordion-body {
     padding: 0 12px;
   }
 
   .cta-button {
-    font-size: 1.05rem; /* 約16.8px */
-    padding: 14px 20px; /* タップしやすく */
-    width: 100%; /* 横幅広くして押しやすく */
+    font-size: 1.05rem;
+    padding: 14px 20px;
+    width: 100%;
     max-width: 300px;
   }
 
