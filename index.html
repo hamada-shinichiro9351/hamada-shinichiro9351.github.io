@@ -9,70 +9,97 @@
 <body>
   <header>
     <div class="container">
-      <h1>業務の「めんどう」をAIでラクに。</h1>
-      <p class="tagline">非エンジニアでも安心。業務改善・自動化をAIで支援します。</p>
+      <img src="face.jpg" alt="プロフィール写真" class="profile-photo" />
+      <img src="face.jpg" alt="プロフィール写真：濱田慎一郎" class="profile-photo" loading="lazy" />
+      <h1>濱田慎一郎</h1>
+      <p class="tagline">AIと共に、業務を一歩先へ</p>
+      <p style="margin-top: 8px; font-size: 0.95rem; font-weight: 400;">
+        日々の経験を形にしながら、<br />
+        「小さな一歩から大きな成果を生み出す」AI活用に取り組んでいます。
+      </p>
     </div>
   </header>
 
   <main class="container">
-    <section>
-      <h2>できること</h2>
-      <ul>
-        <li>よくある問い合わせを自動で対応するチャットボットの作成</li>
-        <li>請求書や領収書をAIで自動仕分け</li>
-        <li>社内ルールやマニュアルをAIに覚えさせて検索できるように</li>
-        <li>動画編集やWeb制作も含めた業務全体の効率化サポート</li>
-      </ul>
+    <section aria-label="プロフィール">
+      <h2>プロフィール</h2>
+      <img src="face.jpg" alt="プロフィール写真：濱田慎一郎" class="profile-photo" loading="lazy" />
+      <p>
+        1993年生まれ・大阪在住のAI活用コンサルタントです。<br>
+        7年間ITエンジニアとして勤務し、現在はAIや自動化ツールを活用した業務改善の支援を行っています。<br>
+        仕組みづくりや効率化が得意で、相談しやすく頼れる存在を目指しています。<br>
+        趣味はラーメン屋巡りと、ガジェットやテクノロジーに関する情報収集です。<br>
+        性格はMBTIでいうとINTJタイプ。計画的で論理的、丁寧でスピーディーな対応を心がけています。
+      </p>
     </section>
 
-    <section>
+    <section aria-label="導入事例">
       <h2>導入事例</h2>
-      <div class="case">
-        <h3>就業規則チャットフロー</h3>
-        <p>社員が社内規定をAIに聞けるようになり、自己解決が促進。問い合わせ対応の負担軽減につながりました。</p>
-        <img src="images/demo_chatflow.png" alt="チャットボットのデモ画面">
+
+      <div class="accordion-item">
+        <input type="checkbox" id="case1" class="accordion-toggle" />
+        <label for="case1" class="accordion-title" tabindex="0">就業規則チャットフロー</label>
+        <div class="accordion-content">
+          <img src="demo_chatflow.png" alt="チャットボットのデモ画面" class="zoomable-img" />
+          <p>社員が社内規定をAIに聞けるようになり、自己解決が促進。問い合わせ対応の負担軽減につながりました。</p>
+        </div>
       </div>
-      <div class="case">
-        <h3>領収書整理ワークフロー</h3>
-        <p>レシート画像をAIで読み取り、経費科目へ自動分類。経理の転記ミスを削減し、業務効率が向上しました。</p>
-        <img src="images/receipt_flow.png" alt="領収書処理のデモ画面">
+
+      <div class="accordion-item">
+        <input type="checkbox" id="case2" class="accordion-toggle" />
+        <label for="case2" class="accordion-title" tabindex="0">領収書整理ワークフロー</label>
+        <div class="accordion-content">
+          <img src="receipt_flow.png" alt="領収書処理のデモ画面" class="zoomable-img" />
+          <p>レシート画像をAIで読み取り、経費科目へ自動分類。経理の転記ミスを削減し、業務効率が向上しました。</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <input type="checkbox" id="case3" class="accordion-toggle" />
+        <label for="case3" class="accordion-title" tabindex="0">英語・韓国語翻訳チャット</label>
+        <div class="accordion-content">
+          <img src="translation_chat.png" alt="多言語チャットのデモ" class="zoomable-img" />
+          <p>英語・韓国語での対応が求められる業務において、多言語チャットボットを構築し、顧客対応の幅を広げました。</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <input type="checkbox" id="case4" class="accordion-toggle" />
+        <label for="case4" class="accordion-title" tabindex="0">X投稿ジェネレーター</label>
+        <div class="accordion-content">
+          <img src="x_generator.png" alt="SNS投稿生成の画面例" class="zoomable-img" />
+          <p>毎日のSNS投稿作成を支援するAIツールを開発。ユーザーの属性に合わせた文体・内容の提案が可能です。</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <input type="checkbox" id="case5" class="accordion-toggle" />
+        <label for="case5" class="accordion-title" tabindex="0">経費精算・就業規定チャットフロー</label>
+        <div class="accordion-content">
+          <img src="keihi_chat.png" alt="就業規定チャットの画面例" class="zoomable-img" />
+          <p>社内ナレッジをもとに、就業規定と経費精算のQ&Aに対応するAIチャットボットを構築。社内問い合わせを削減。</p>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>自己紹介</h2>
-      <p>1993年生まれ・大阪在住のAI活用コンサルタントです。7年間ITエンジニアとして勤務し、現在はAIや自動化ツールを活用した業務改善の支援を行っています。</p>
-      <p>仕組みづくりや効率化が得意で、相談しやすく頼れる存在を目指しています。趣味はラーメン屋巡りと、ガジェットやテクノロジーに関する情報収集です。</p>
-      <p>性格はMBTIでいうとINTJタイプ。計画的で論理的、丁寧でスピーディーな対応を心がけています。</p>
-    </section>
-
-    <section>
-      <h2>経歴とスキル</h2>
-      <ul>
-        <li>新卒から7年間、ITエンジニアとしてシステム開発に従事</li>
-        <li>カンボジアに半年間移住経験あり</li>
-        <li>Web制作会社で勤務後、動画編集者として独立</li>
-        <li>現在はAI活用支援を軸に、業務改善や自動化に幅広く対応</li>
+    <section aria-label="お問い合わせ">
+      <h2>お問い合わせ</h2>
+      <p>ご相談・ご依頼はメールまたはLINEからお気軽にご連絡ください。</p>
+      <ul class="contact">
+        <li>
+          <a href="mailto:hamada.shinichiro9351@gmail.com">
+            <span style="font-size: 24px; vertical-align: middle; margin-right: 8px;">✉️</span>
+            メールで連絡
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/ti/p/1bxzlr18OL" target="_blank" rel="noopener noreferrer">
+            <img src="line_logo.png" alt="LINEで連絡" style="width:32px; height:32px; vertical-align:middle; margin-right:8px;" />
+            LINEで連絡
+          </a>
+        </li>
       </ul>
-      <h3>スキルセット</h3>
-      <ul>
-        <li>プロンプト設計・ChatGPT API活用</li>
-        <li>Dify / Cursor / Claude / Gemini / Midjourney などのAIツール活用</li>
-        <li>動画編集・Web制作（HTML/CSS）</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>ご相談について</h2>
-      <p>現在は小規模な案件を中心に対応していますが、柔軟にご相談可能です。「こういうことできる？」というレベルでも気軽にご連絡ください。</p>
-      <a href="mailto:your.email@example.com" class="btn">無料で相談する</a>
     </section>
   </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 濱田慎一郎</p>
-    </div>
-  </footer>
 </body>
 </html>
