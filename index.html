@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI活用支援パートナー｜濱田慎一郎</title>
   <style>
-    /* リセット */
     * {
       box-sizing: border-box;
     }
@@ -78,6 +77,108 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transform: translateY(-2px);
     }
+
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 12px;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .accordion-container {
+      margin-top: 16px;
+    }
+
+    .accordion-item {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background: #e3f2fd;
+      padding: 12px 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .accordion-header:hover {
+      background: #bbdefb;
+    }
+
+    .accordion-header.active {
+      background: #bbdefb;
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 16px;
+    }
+
+    .accordion-body.active {
+      max-height: 1000px;
+      padding: 16px;
+    }
+
+    .zoomable-img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 12px auto;
+    }
+
+    footer {
+      background: #eee;
+      text-align: center;
+      color: #888;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    .contact {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact a {
+      color: #1976d2;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      color: #1565c0;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 12px;
+      }
+      header {
+        padding: 28px 0 18px 0;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      .tagline {
+        font-size: 1.1rem;
+      }
+      .zoomable-img {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -90,172 +191,92 @@
         「小さな一歩から大きな成果を生み出す」<br />業務にフィットしたAI導入を支援します。
       </p>
       <div style="margin-top: 16px;">
-        <a href="#contact">
-          <button class="cta-button">無料相談してみる</button>
-        </a>
+        <a href="#contact"><button class="cta-button">無料相談してみる</button></a>
       </div>
     </div>
   </header>
 
-    <main class="container">
+  <main class="container">
+    <section>
+      <h2>制作物ギャラリー</h2>
+      <div class="accordion-container">
 
-        <section>
-      <h2>はじめに</h2>
-      <p>
-        「AIを導入したいけど、どこから始めればいいかわからない」<br />
-        「試してみたけど、うまく業務に活かせなかった」<br />
-        そんな悩みを持つ方へ、<strong>業務にフィットした“すぐ使えるAI”</strong>の導入を支援します。
-      </p>
+        <div class="accordion-item">
+          <div class="accordion-header">よくある疑問に答える、LINEチャットボット</div>
+          <div class="accordion-body">
+            <img src="taikyo_line_sample.png" alt="" class="zoomable-img" />
+            <p>原状回復に関するルールや費用負担をLINEで確認できるボット</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">社内規定チャットフロー</div>
+          <div class="accordion-body">
+            <img src="taikyo_sample.png" alt="" class="zoomable-img" />
+            <p>経費精算・就業ルールをFAQ化したチャットボット</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">議事録ワークフロー</div>
+          <div class="accordion-body">
+            <img src="gijiroku_sample2.png" alt="" class="zoomable-img" />
+            <img src="gijiroku_sample3.png" alt="" class="zoomable-img" />
+            <p>音声をアップロード → 要約 → 議事録を自動生成するフロー</p>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <section>
-      <h2>プロフィール</h2>
-      <p>
-        1993年生まれ・大阪在住のAI活用コンサルタントです。<br />
-        ITエンジニアとして7年間の実務経験を持ち、<br />現在は<strong>業務効率化・自動化を目的としたAI導入支援</strong>を行っています。<br />
-        ChatGPTやOpenAI APIをはじめ、Dify、GAS、Midjourneyなど多様なツールを活用し、<br />
-        <strong>現場にフィットする形でのAI活用・ナレッジ化・プロンプト設計</strong>を得意としています。<br />
-        コンサルティングでは、論理的な課題整理と迅速な提案を重視し、<br />
-        <strong>「成果につながる実装」</strong>にこだわっています。<br />
-        これまでの技術的バックグラウンドと現場視点を活かし、<br />貴社の業務に最適なソリューションをご提案いたします。
-      </p>
-    </section>
-
-    <section>
-      <h2>スキルセット（＋活用例）</h2>
-      <ul>
-        <li>プロンプト設計（例：社内FAQの自動応答、一次対応ボット）</li>
-        <li>Dify / Udify：チャットボットや業務ワークフローの構築</li>
-        <li>ChatGPT API / Claude / Gemini：社内業務自動化への応用</li>
-        <li>Google Apps Script（GAS）：スプレッドシート連携で集計・日報作成</li>
-        <li>Midjourney：画像生成を使ったプロトタイプ資料作成</li>
-        <li>cursor：AI活用環境での軽量なツール開発・改修</li>
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <p>ご相談・ご依頼はメールまたはLINEでご連絡ください。</p>
+      <ul class="contact">
+        <li>
+          <a href="mailto:hamada.shinichiro9351@gmail.com">✉️ メールで連絡</a>
+        </li>
+        <li>
+          <a href="https://line.me/ti/p/1bxzlr18OL" target="_blank" rel="noopener noreferrer">
+            <img src="line_logo.png" alt="LINE" style="width:32px; height:32px; vertical-align:middle; margin-right:8px;">
+            LINEで連絡
+          </a>
+        </li>
       </ul>
     </section>
+  </main>
 
-    <section>
-      <h2>AI導入の流れ</h2>
-      <p>
-        属人化せず、チーム全体で使える仕組みづくりを重視し、以下の流れで導入をサポートします。
-      </p>
-      <ol>
-        <li><strong>無料相談：</strong>業務の悩みや課題をヒアリング</li>
-        <li><strong>課題整理：</strong>どこにAIを活かすと効果的かを明確化</li>
-        <li><strong>プロンプト設計：</strong>業務に合わせた応答・判断フローを作成</li>
-        <li><strong>試験導入（PoC）：</strong>実務に近い形でスモールスタート</li>
-        <li><strong>社内展開・改善：</strong>フィードバックをもとに改善、定着支援</li>
-      </ol>
-    </section>
-
-<section>
-  <h2>制作物ギャラリー</h2>
-  <div class="accordion-container">
-
-    <div class="accordion-item">
-      <div class="accordion-header">よくある疑問に答える、LINEチャットボット</div>
-      <div class="accordion-body">
-        <img src="taikyo_line_sample.png" alt="原状回復LINEボットの画面サンプル" class="zoomable-img" />
-        <p>原状回復に関するルールや費用負担の考え方をLINEから質問できるチャットボット<br />
-        ガイドラインに基づく情報整理と自然な対話形式で、実用的なAI活用を体験できます</p>
-        <div style="text-align:center; margin-top:16px;">
-          <a href="https://line.me/R/ti/p/@863nhxkq" target="_blank" rel="noopener noreferrer">
-            <button class="cta-button">サポートAIボットを見る</button>
-          </a>
-        </div>
-      </div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 濱田慎一郎</p>
     </div>
+  </footer>
 
-    <div class="accordion-item">
-      <div class="accordion-header">社内規定チャットフロー</div>
-      <div class="accordion-body">
-        <img src="taikyo_sample.png" alt="社内ナレッジAI化サンプル画面" class="zoomable-img" />
-        <p>経費精算ルールや就業規則に関する質問に自動応答するチャットフロー<br />
-        ナレッジベースのFAQ対応や社内チャットボット化の基礎実装例として構築</p>
-        <div style="text-align:center; margin-top:16px;">
-          <a href="https://udify.app/chatbot/UAM8T8LGkqvcLf7i" target="_blank" rel="noopener noreferrer">
-            <button class="cta-button">社内規定チャットフローを見る</button>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <div class="accordion-header">議事録ワークフロー</div>
-      <div class="accordion-body">
-        <img src="gijiroku_sample2.png" alt="AI議事録作成画面サンプル" class="zoomable-img" />
-        <img src="gijiroku_sample3.png" alt="AI議事録作成画面サンプル2" class="zoomable-img" />
-        <p>音声ファイルをアップロードするだけで、AIが内容を要約・整形し、議事録を自動作成します<br />
-        要点抽出やフォーマット整形まで含めた、実用的な業務効率化ワークフローです</p>
-        <div style="text-align:center; margin-top:16px;">
-          <a href="https://udify.app/workflow/c5KoqdWR4a8mgKwP" target="_blank" rel="noopener noreferrer">
-            <button class="cta-button">議事録ワークフローを見る</button>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <div class="accordion-header">領収書自動管理ツール</div>
-      <div class="accordion-body">
-        <video controls style="width:100%; max-width:320px; border-radius:8px; margin:12px auto; display:block;">
-          <source src="dify_demo.mp4" type="video/mp4">
-          お使いのブラウザは動画タグに対応していません。
-        </video>
-        <p>領収書の画像をアップロードするだけで、AIが自動で抽出し、一覧管理します。<br />
-        経費精算や帳簿管理の手間を大幅に削減できる業務効率化ツールです。</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="contact">
-  <h2>お問い合わせ</h2>
-  <p>ご相談・ご依頼はメールまたはLINEからお気軽にご連絡ください。</p>
-  <ul class="contact">
-    <li>
-      <a href="mailto:hamada.shinichiro9351@gmail.com">
-        <span style="font-size: 24px; vertical-align: middle; margin-right: 8px;">✉️</span>
-        メールで連絡
-      </a>
-    </li>
-    <li>
-      <a href="https://line.me/ti/p/1bxzlr18OL" target="_blank" rel="noopener noreferrer">
-        <img src="line_logo.png" alt="LINEで連絡" style="width:32px; height:32px; vertical-align:middle; margin-right:8px;" />
-        LINEで連絡
-      </a>
-    </li>
-  </ul>
-</section>
-
-<footer>
-  <div class="container">
-    <p>&copy; 2025 濱田慎一郎</p>
-  </div>
-</footer>
-
-<!-- アコーディオンJS -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const headers = document.querySelectorAll(".accordion-header");
-    headers.forEach(header => {
-      header.addEventListener("click", function () {
-        this.classList.toggle("active");
-        const body = this.nextElementSibling;
-        if (body.style.maxHeight) {
-          body.style.maxHeight = null;
-        } else {
-          body.style.maxHeight = body.scrollHeight + "px";
-        }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const headers = document.querySelectorAll(".accordion-header");
+      headers.forEach(header => {
+        header.addEventListener("click", function () {
+          const body = this.nextElementSibling;
+          const isActive = this.classList.contains("active");
+          headers.forEach(h => {
+            h.classList.remove("active");
+            h.nextElementSibling.classList.remove("active");
+          });
+          if (!isActive) {
+            this.classList.add("active");
+            body.classList.add("active");
+          }
+        });
       });
-    });
 
-    // 初期展開（1つ目を開く）
-    const firstHeader = document.querySelector(".accordion-header");
-    const firstBody = document.querySelector(".accordion-body");
-    if (firstHeader && firstBody) {
-      firstHeader.classList.add("active");
-      firstBody.style.maxHeight = firstBody.scrollHeight + "px";
-    }
-  });
-</script>
+      // 最初の項目を開いておく
+      const first = document.querySelector(".accordion-header");
+      if (first) {
+        first.classList.add("active");
+        first.nextElementSibling.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>
