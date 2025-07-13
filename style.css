@@ -35,52 +35,14 @@ header h1 {
   font-weight: 300;
 }
 
-main section {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  margin-bottom: 32px;
-  padding: 32px 24px;
-  animation: fadeIn 0.6s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-h2 {
-  color: #2c3e50;
-  border-left: 4px solid #2c3e50;
-  padding-left: 0.7em;
-  margin-top: 0;
-  margin-bottom: 1em;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-ul {
-  padding-left: 1.5em;
-}
-
-.project {
-  margin-top: 16px;
-  padding: 16px;
-  background: #eef6fa;
-  border: 1px solid #c0dbea;
-  border-radius: 8px;
-}
-
-a {
-  color: #2c3e50;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-a:hover {
-  color: #1976d2;
-  text-decoration: underline;
-  opacity: 0.85;
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .cta-button {
@@ -103,136 +65,80 @@ a:hover {
   transform: translateY(-2px);
 }
 
-.contact {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-}
-
-.contact a {
-  color: #1976d2;
-  font-weight: bold;
-}
-
-.contact a:hover {
-  color: #1565c0;
-}
-
-footer {
-  background: #eee;
-  text-align: center;
-  color: #888;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-main section:nth-of-type(1) { background: #fafdff; }
-main section:nth-of-type(2) { background: #f5faff; }
-main section:nth-of-type(3) { background: #f8fbff; }
-main section:nth-of-type(4) { background: #ffffff; }
-
 /* アコーディオン */
+.accordion-container {
+  margin-top: 24px;
+}
+
 .accordion-item {
-  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 16px;
+  overflow: hidden;
 }
 
 .accordion-header {
-  font-weight: bold;
-  font-size: 1.2em;
-  cursor: pointer;
+  padding: 16px;
   background: #e3f2fd;
-  padding: 12px 16px;
-  border-radius: 8px;
-  transition: background 0.2s;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
 }
 
-.accordion-header:hover {
-  background: #bbdefb;
-}
-
-.accordion-header.active::before {
+.accordion-header::after {
   content: '▼';
-  margin-right: 8px;
+  position: absolute;
+  right: 16px;
+  transition: transform 0.3s;
 }
 
-.accordion-header::before {
-  content: '▶';
-  margin-right: 8px;
-  transition: transform 0.2s;
-}
-
-.accordion-header.active::before {
-  transform: rotate(90deg);
+.accordion-header.active::after {
+  transform: rotate(180deg);
 }
 
 .accordion-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s, padding 0.3s;
-  background: #fff;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: max-height 0.3s ease;
   padding: 0 16px;
-  text-align: center;
-}
-
-.accordion-body.active {
-  max-height: 2000px;
-  padding: 16px;
 }
 
 .accordion-body p {
-  margin-bottom: 12px;
-  line-height: 1.5;
+  margin: 16px 0;
 }
 
+/* 画像調整 */
 .zoomable-img {
-  display: block;
-  max-width: 100%;
-  width: auto;
+  width: 100%;
+  max-width: 320px;
   height: auto;
-  margin: 12px auto;
+  display: block;
+  margin: 0 auto 12px;
   border-radius: 8px;
   cursor: zoom-in;
-  object-fit: contain;
 }
 
-/* プロフィール画像 */
-.profile-photo {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 12px;
-  border: 3px solid #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+/* お問い合わせリスト */
+ul.contact {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-/* モーダル画像用 */
-.modal-img-bg {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
+ul.contact li {
+  display: flex;
   align-items: center;
 }
 
-.modal-img-bg.active {
-  display: flex;
-}
-
-.modal-img-bg img {
-  max-width: 90vw;
-  max-height: 80vh;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+ul.contact a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #1976d2;
+  font-size: 1.1rem;
 }
 
 /* 戻るボタン */
@@ -255,65 +161,12 @@ main section:nth-of-type(4) { background: #ffffff; }
   background: #1565c0;
 }
 
-/* レスポンシブ */
-@media (max-width: 600px) {
-  .container {
-    padding: 12px;
-  }
-
-  header {
-    padding: 28px 0 18px 0;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .tagline {
-    font-size: 1.1rem;
-  }
-
-  body {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  main section {
-    padding: 20px 12px;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  .accordion-header {
-    font-size: 1.1rem;
-    padding: 10px 14px;
-  }
-
-  .accordion-body {
-    padding: 0 12px;
-  }
-
-  .cta-button {
-    font-size: 1.05rem;
-    padding: 14px 20px;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .zoomable-img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .contact {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .contact a {
-    font-size: 1rem;
-  }
+/* フッター */
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 24px 0;
+  margin-top: 48px;
+  font-size: 0.9rem;
+  color: #666;
 }
