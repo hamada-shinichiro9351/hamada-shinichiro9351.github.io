@@ -207,7 +207,6 @@ main section:nth-of-type(4) { background: #ffffff; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   display: block;
   max-width: 100%;
-  height: auto;
   margin: 0 auto 12px;
 }
 
