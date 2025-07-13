@@ -114,8 +114,14 @@ main section:nth-of-type(3) { background: #f8fbff; }
 main section:nth-of-type(4) { background: #ffffff; }
 
 /* アコーディオン */
-.accordion-item { margin-bottom: 20px; }
-.accordion-toggle { display: none; }
+.accordion-item {
+  margin-bottom: 20px;
+}
+
+.accordion-toggle {
+  display: none;
+}
+
 .accordion-title {
   display: flex;
   align-items: center;
@@ -127,32 +133,51 @@ main section:nth-of-type(4) { background: #ffffff; }
   border-radius: 8px;
   transition: background 0.2s;
 }
+
 .accordion-title:hover {
   background: #bbdefb;
 }
-.accordion-title:focus {
-  outline: 2px solid #1976d2;
-  outline-offset: 2px;
-}
+
 .accordion-title::before {
   content: '▶';
   display: inline-block;
   margin-right: 12px;
   font-size: 1.2em;
-  transition: opacity 0.2s ease;
+  transition: transform 0.2s;
 }
+
 .accordion-toggle:checked + .accordion-title::before {
   content: '▼';
+  transform: rotate(90deg);
 }
+
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.3s, padding 0.3s;
   background: #fff;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 16px;
+  text-align: center; /* 追加: 説明文とボタンを中央寄せ */
 }
+
+.accordion-content p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.accordion-content a {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.accordion-content button {
+  display: inline-block;
+  margin: 0 auto;
+}
+
 .accordion-toggle:checked + .accordion-title + .accordion-content {
   max-height: 2000px;
   padding: 16px;
@@ -199,75 +224,74 @@ main section:nth-of-type(4) { background: #ffffff; }
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
-/* ボタン共通化 */
-.cta-button,
-.btn {
-  background-color: #1976d2;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  display: inline-block;
-  text-align: center;
-}
-.cta-button:hover,
-.btn:hover {
-  background-color: #1565c0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
+/* Difyチャット調整 */
+#dify-chatbot-bubble-button {
+  bottom: 140px !important;
+  right: 20px !important;
 }
 
-/* 実績セクション */
-.case {
-  background: #f0f4f8;
-  border: 1px solid #d0dce5;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 24px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-}
-.case h3 {
-  margin-top: 0;
-  font-size: 1.3rem;
-  color: #2c3e50;
-}
-.case p {
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-.case img {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  margin-top: 12px;
+#dify-chatbot-bubble-window {
+  margin-bottom: 140px !important;
 }
 
-/* 自己紹介セクション */
-.about-me {
-  background: #fafcff;
-  border-left: 5px solid #1976d2;
-  padding: 24px;
-  border-radius: 10px;
-  margin-bottom: 32px;
-}
-.about-me p {
-  line-height: 1.7;
-  margin-bottom: 1em;
-}
-
+/* レスポンシブ */
 @media (max-width: 600px) {
-  .container { padding: 8px; }
-  main section { padding: 18px 8px; }
-  header { padding: 32px 0 20px 0; }
-  header h1 { font-size: 1.5rem; }
-  .tagline { font-size: 1rem; }
-  p { word-wrap: break-word; overflow-wrap: break-word; }
-  header p { line-height: 1.6; }
-  main section p { line-height: 1.7; }
+  .container {
+    padding: 12px;
+  }
+
+  header {
+    padding: 28px 0 18px 0;
+  }
+
+  header h1 {
+    font-size: 2rem; /* 32px にアップ */
+  }
+
+  .tagline {
+    font-size: 1.1rem; /* 約17.6px、ややスッキリに */
+  }
+
+  body {
+    font-size: 15px; /* 通常本文サイズ明示 */
+    line-height: 1.7;
+  }
+
+  main section {
+    padding: 20px 12px;
+  }
+
+  h2 {
+    font-size: 1.4rem; /* 約22.4px、メリハリ維持 */
+  }
+
+  .accordion-title {
+    font-size: 1.1rem; /* やや小ぶりで統一感を */
+    padding: 10px 14px;
+  }
+
+  .accordion-content {
+    padding: 0 12px;
+  }
+
+  .cta-button {
+    font-size: 1.05rem; /* 約16.8px */
+    padding: 14px 20px; /* タップしやすく */
+    width: 100%; /* 横幅広くして押しやすく */
+    max-width: 300px;
+  }
+
+  .zoomable-img {
+    max-width: 100%;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .contact a {
+    font-size: 1rem;
+  }
 }
