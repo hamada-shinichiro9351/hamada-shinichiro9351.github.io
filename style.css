@@ -170,11 +170,18 @@ footer {
 
 /* ▼ 修正ポイントここから ▼ */
 .contact a {
-  text-decoration: none;
+  text-decoration: none !important; /* ← 必ず消えるように !important を追加 */
   color: inherit;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  line-height: 1.5;
+}
+
+.contact span {
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
 }
 
 .contact img {
