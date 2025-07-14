@@ -134,6 +134,18 @@
       gap: 24px;
       flex-wrap: wrap;
     }
+
+  .contact a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact img {
+    vertical-align: middle;
+  }
   </style>
 </head>
 <body>
