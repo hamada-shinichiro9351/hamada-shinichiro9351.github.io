@@ -55,27 +55,28 @@ header h1 {
 
 .cta-button:hover {
   background-color: #1565c0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
-}
-
-.cta-wrapper {
-  text-align: center;
-  margin-top: 16px;
 }
 
 main section {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   margin-bottom: 32px;
   padding: 32px 24px;
   animation: fadeIn 0.6s ease-in;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h2 {
@@ -116,6 +117,7 @@ ul {
   font-weight: bold;
   font-size: 1.1rem;
   transition: background 0.2s ease;
+  user-select: none;
 }
 
 .accordion-title:hover {
@@ -160,7 +162,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0.75);
   display: none;
   justify-content: center;
   align-items: center;
@@ -175,7 +177,7 @@ ul {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 /* お問い合わせセクション */
@@ -225,7 +227,28 @@ footer {
   margin-top: 40px;
 }
 
-/* チャットボットスタイル */
+/* 上に戻るボタン */
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 32px;
+  z-index: 2000;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 53px;
+  height: 53px;
+  font-size: 1.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.7;
+}
+
+/* Difyチャットボット */
 #dify-chatbot-bubble-button {
   background-color: #1C64F2 !important;
 }
