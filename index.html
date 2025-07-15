@@ -134,163 +134,48 @@
       gap: 24px;
       flex-wrap: wrap;
     }
+    .contact a {
+      text-decoration: none !important;
+      color: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.5;
+    }
+    .contact span {
+      font-size: 24px;
+      display: inline-block;
+      line-height: 1;
+    }
+    .contact img {
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <img src="face.jpg" alt="プロフィール写真" class="profile-photo" />
       <h1>濱田慎一郎</h1>
       <p class="tagline">AIと共に、業務を一歩先へ</p>
-      <p style="margin-top: 8px; font-size: 0.95rem; font-weight: 400;">
-        日々の経験を形にしながら、<br />
-        「小さな一歩から大きな成果を生み出す」AI活用に取り組んでいます。
-      </p>
-      <div style="margin-top: 16px;">
-        <a href="#contact">
-          <button class="cta-button">無料相談してみる</button>
-        </a>
-      </div>
     </div>
   </header>
 
   <main class="container">
     <section>
-      <h2>はじめに</h2>
-      <p>
-「AIって興味はあるけど、どこから始めたらいいかわからない」<br />  
-「日々の業務が手作業ばかりで、もっと効率化したい」<br /> 
-「社内対応や資料作成に追われて、本来の仕事に集中できない」<br /> 
-
-そんなお悩みを持つ方にこそ、AIを“使える仕組み”に変えるサポートをしています。<br />
-専門的な知識がなくても問題ないです。<br />
-現場の流れに合わせた導入設計とやさしい運用サポートで、無理なく仕組み化を進めていくことができます。<br />
-      </p>
-    </section>
-
-    <section>
-      <h2>プロフィール</h2>
-      <p>
-        1993年生まれ・大阪在住のAI活用コンサルタントです。<br />
-        ITエンジニアとして7年間の実務経験を持ち、<br />
-        現在は<strong>業務効率化・自動化を目的としたAI導入支援</strong>を行っています。<br />
-        ChatGPTやOpenAI APIをはじめ、Dify、GAS、Midjourneyなど多様なツールを活用し、<br />
-        <strong>現場にフィットする形でのAI活用・ナレッジ化・プロンプト設計</strong>を得意としています。<br />
-        コンサルティングでは、論理的な課題整理と迅速な提案を重視し、<br />
-        <strong>「成果につながる実装」</strong>にこだわっています。<br />
-        これまでの技術的バックグラウンドと現場視点を活かし、<br />
-        貴社の業務に最適なソリューションをご提案いたします。
-      </p>
-    </section>
-
-        <section>
-      <h2>スキルセット（＋活用例）</h2>
-      <ul>
-        <li>プロンプト設計（例：社内FAQの自動応答、一次対応ボット）</li>
-        <li>Dify / Udify：チャットボットや業務ワークフローの構築</li>
-        <li>ChatGPT API / Claude / Gemini：社内業務自動化への応用</li>
-        <li>Google Apps Script（GAS）：スプレッドシート連携で集計・日報作成</li>
-        <li>Midjourney：画像生成を使ったプロトタイプ資料作成</li>
-        <li>cursor：AI活用環境での軽量なツール開発・改修</li>
+      <h2>お問い合わせ</h2>
+      <ul class="contact">
+        <li>
+          <a href="mailto:hamada.shinichiro9351@gmail.com">
+            <span>✉️</span> メールで連絡
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/ti/p/xxxxxxxx">
+            <span>💬</span> LINEで連絡
+          </a>
+        </li>
       </ul>
     </section>
-
-    <section>
-      <h2>AI導入の流れ</h2>
-      <p>
-        チーム全体で使える仕組みづくりを重視し、以下の流れで導入をサポートします。
-      </p>
-      <ol>
-        <li><strong>無料相談：</strong>業務の悩みや課題をヒアリング</li>
-        <li><strong>課題整理：</strong>どこにAIを活かすと効果的かを明確化</li>
-        <li><strong>プロンプト設計：</strong>業務に合わせた応答・判断フローを作成</li>
-        <li><strong>試験導入（PoC）：</strong>実務に近い形でスモールスタート</li>
-        <li><strong>社内展開・改善：</strong>フィードバックをもとに改善、定着支援</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>制作物ギャラリー</h2>
-      <div class="works-gallery">
-
-        <div class="accordion-item">
-          <input type="checkbox" id="item1" class="accordion-toggle" checked />
-          <label for="item1" class="accordion-title" tabindex="0">よくある疑問に答える、LINEチャットボット</label>
-          <div class="accordion-content">
-            <img src="taikyo_line_sample.png" alt="原状回復LINEボットの画面サンプル" class="zoomable-img" />
-            <p>原状回復に関するルールや費用負担の考え方をLINEから質問できるチャットボット<br />
-            ガイドラインに基づく情報整理と自然な対話形式で、実用的なAI活用を体験できます</p>
-            <div style="text-align:center; margin-top:16px;">
-              <a href="https://line.me/R/ti/p/@863nhxkq" target="_blank" rel="noopener noreferrer">
-                <button class="cta-button">サポートAIボットを見る</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <input type="checkbox" id="item2" class="accordion-toggle" />
-          <label for="item2" class="accordion-title" tabindex="0">社内規定チャットフロー</label>
-          <div class="accordion-content">
-            <img src="taikyo_sample.png" alt="社内ナレッジAI化サンプル画面" class="zoomable-img" />
-            <p>経費精算ルールや就業規則に関する質問に自動応答するチャットフロー<br />
-            ナレッジベースのFAQ対応や社内チャットボット化の基礎実装例として構築</p>
-            <div style="text-align:center; margin-top:16px;">
-              <a href="https://udify.app/chat/i2VD7FUBt0Jttdos" target="_blank" rel="noopener noreferrer">
-                <button class="cta-button">社内規定チャットフローを見る</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <input type="checkbox" id="item3" class="accordion-toggle" />
-          <label for="item3" class="accordion-title" tabindex="0">議事録ワークフロー</label>
-          <div class="accordion-content">
-            <img src="gijiroku_sample2.png" alt="AI議事録作成画面サンプル" class="zoomable-img" />
-            <img src="gijiroku_sample3.png" alt="AI議事録作成画面サンプル2" class="zoomable-img" />
-            <p>音声ファイルをアップロードするだけで、AIが内容を要約・整形し、議事録を自動作成します<br />
-            要点抽出やフォーマット整形まで含めた、実用的な業務効率化ワークフローです</p>
-            <div style="text-align:center; margin-top:16px;">
-              <a href="https://udify.app/workflow/c5KoqdWR4a8mgKwP" target="_blank" rel="noopener noreferrer">
-                <button class="cta-button">議事録ワークフローを見る</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <input type="checkbox" id="item4" class="accordion-toggle" />
-          <label for="item4" class="accordion-title" tabindex="0">領収書自動管理ツール</label>
-          <div class="accordion-content">
-            <video controls style="width:100%; max-width:320px; border-radius:8px; margin:12px auto; display:block;">
-              <source src="dify_demo.mp4" type="video/mp4">
-              お使いのブラウザは動画タグに対応していません。
-            </video>
-            <p>領収書の画像をアップロードするだけで、AIが自動で抽出し、一覧管理します。<br />
-            経費精算や帳簿管理の手間を大幅に削減できる業務効率化ツールです。</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-        <section id="contact">
-      <h2>お問い合わせ</h2>
-<ul class="contact">
-  <li>
-    <a href="mailto:hamada.shinichiro9351@gmail.com">
-      <span>✉️</span> メールで連絡
-    </a>
-  </li>
-  <li>
-    <a href="https://line.me/ti/p/xxxxxxxx">
-      <span>💬</span> LINEで連絡
-    </a>
-  </li>
-</ul>
-   
-  </section>
   </main>
 
   <footer>
@@ -298,60 +183,5 @@
       <p>&copy; 2025 濱田慎一郎</p>
     </div>
   </footer>
-
-  <!-- 上に戻るボタン -->
-  <button id="backToTopBtn" style="display:none; position:fixed; left:50%; transform:translateX(-50%); bottom:32px; z-index:2000; background:#1976d2; color:#fff; border:none; border-radius:50%; width:53px; height:53px; font-size:1.9rem; box-shadow:0 2px 8px rgba(0,0,0,0.15); cursor:pointer; transition:opacity 0.3s; opacity:0.7;">↑</button>
-
-  <!-- Difyチャットボット埋め込み -->
-  <script>
-    window.difyChatbotConfig = {
-      token: 'osvRoZ1mKcXdO0OM',
-      systemVariables: {},
-      userVariables: {},
-    };
-  </script>
-  <script src="https://udify.app/embed.min.js" id="osvRoZ1mKcXdO0OM" defer></script>
-
-  <style>
-    #dify-chatbot-bubble-button {
-      background-color: #1C64F2 !important;
-    }
-    #dify-chatbot-bubble-window {
-      width: 32rem !important;
-      height: 48rem !important;
-    }
-  </style>
-
-  <!-- モーダル画像拡大 -->
-  <div class="modal-img-bg"></div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      let modalBg = document.querySelector('.modal-img-bg');
-      document.querySelectorAll('.zoomable-img').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', function() {
-          modalBg.innerHTML = '<img src="' + img.src + '" alt="拡大画像">';
-          modalBg.classList.add('active');
-        });
-      });
-      modalBg.addEventListener('click', function() {
-        modalBg.classList.remove('active');
-        modalBg.innerHTML = '';
-      });
-
-      // 上に戻るボタンの表示制御
-      const backToTopBtn = document.getElementById('backToTopBtn');
-      window.addEventListener('scroll', function() {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
-          backToTopBtn.style.display = 'block';
-        } else {
-          backToTopBtn.style.display = 'none';
-        }
-      });
-      backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-  </script>
 </body>
 </html>
