@@ -186,16 +186,15 @@
   <h2>制作物ギャラリー</h2>
   <div class="works-gallery">
 
-    <div class="accordion-item">
-      <input type="checkbox" id="item1" class="accordion-toggle" checked />
-      <label for="item1" class="accordion-title" tabindex="0">よくある疑問に答える、LINEチャットボット</label>
+    <div class="accordion-item active">
+      <div class="accordion-title">よくある疑問に答える、LINEチャットボット</div>
       <div class="accordion-content">
         <img src="taikyo_line_sample.png" alt="原状回復LINEボットの画面サンプル" class="zoomable-img" />
         <p>原状回復に関する疑問にLINEからすぐに答えるチャットボット。<br>
         契約書や国交省ガイドラインをもとにQ&Aを構築し、実務で使える精度を実現。<br>
         「誰かに聞かないとわからない」を解消し、顧客満足度を底上げします。</p>
         <div style="text-align:center; margin-top:16px;">
-          <a href="https://line.me/R/ti/p/@863nhxkq" target="_blank" rel="noopener noreferrer">
+          <a href="https://line.me/ti/p/1bxzlr18OL" target="_blank" rel="noopener noreferrer">
             <button class="cta-button">サポートAIボットを見る</button>
           </a>
         </div>
@@ -203,8 +202,7 @@
     </div>
 
     <div class="accordion-item">
-      <input type="checkbox" id="item2" class="accordion-toggle" />
-      <label for="item2" class="accordion-title" tabindex="0">社内規定チャットフロー</label>
+      <div class="accordion-title">社内規定チャットフロー</div>
       <div class="accordion-content">
         <img src="taikyo_sample.png" alt="社内ナレッジAI化サンプル画面" class="zoomable-img" />
         <p>「経費精算ルールは？」「打刻漏れの対応は？」など、社員からの質問に即答できるAIフロー。<br>
@@ -218,8 +216,7 @@
     </div>
 
     <div class="accordion-item">
-      <input type="checkbox" id="item3" class="accordion-toggle" />
-      <label for="item3" class="accordion-title" tabindex="0">議事録ワークフロー</label>
+      <div class="accordion-title">議事録ワークフロー</div>
       <div class="accordion-content">
         <img src="gijiroku_sample2.png" alt="AI議事録作成画面サンプル" class="zoomable-img" />
         <img src="gijiroku_sample3.png" alt="AI議事録作成画面サンプル2" class="zoomable-img" />
@@ -234,8 +231,7 @@
     </div>
 
     <div class="accordion-item">
-      <input type="checkbox" id="item4" class="accordion-toggle" />
-      <label for="item4" class="accordion-title" tabindex="0">領収書自動管理ツール</label>
+      <div class="accordion-title">領収書自動管理ツール</div>
       <div class="accordion-content">
         <video controls style="width:100%; max-width:320px; border-radius:8px; margin:12px auto; display:block;">
           <source src="dify_demo.mp4" type="video/mp4">
@@ -253,12 +249,12 @@
   <h2>お問い合わせ</h2>
   <ul class="contact">
     <li>
-      <a href="mailto:hamada.shinichiro9351@gmail.com">
+      <a href="mailto:hamada.shinichiro9351@gmail.com" style="cursor:pointer;">
         <span>✉️</span> メールで連絡
       </a>
     </li>
     <li>
-    <a href="https://line.me/ti/p/1bxzlr18OL">
+      <a href="https://line.me/ti/p/1bxzlr18OL" style="cursor:pointer;">
         <span>💬</span> LINEで連絡
       </a>
     </li>
@@ -298,7 +294,18 @@
 <!-- モーダル画像拡大 -->
 <div class="modal-img-bg"></div>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function() {
+    // アコーディオン動作
+    const items = document.querySelectorAll(".accordion-item");
+    items.forEach((item) => {
+      const title = item.querySelector(".accordion-title");
+      title.addEventListener("click", () => {
+        items.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+      });
+    });
+
+    // モーダル画像拡大
     let modalBg = document.querySelector('.modal-img-bg');
     document.querySelectorAll('.zoomable-img').forEach(img => {
       img.style.cursor = 'zoom-in';
@@ -312,7 +319,7 @@
       modalBg.innerHTML = '';
     });
 
-    // 上に戻るボタンの表示制御
+    // 上に戻るボタン制御
     const backToTopBtn = document.getElementById('backToTopBtn');
     window.addEventListener('scroll', function() {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
