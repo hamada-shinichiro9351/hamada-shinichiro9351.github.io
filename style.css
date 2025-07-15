@@ -97,9 +97,9 @@ ul {
   cursor: zoom-in;
 }
 
-/* JavaScript式アコーディオン */
+/* アコーディオン（JavaScript制御） */
 .accordion-item {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -108,10 +108,10 @@ ul {
 .accordion-title {
   background: #e3f2fd;
   padding: 14px 16px;
-  font-size: 1.1rem;
-  font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.2s ease;
 }
 
 .accordion-title:hover {
@@ -124,11 +124,11 @@ ul {
   padding: 0 16px;
   background: #fff;
   transition: max-height 0.4s ease, padding 0.4s ease;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #ddd;
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 3000px;
+  max-height: 5000px;
   padding: 16px;
 }
 
@@ -151,7 +151,7 @@ footer {
 }
 
 .contact a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
   display: inline-flex;
   align-items: center;
@@ -185,7 +185,7 @@ footer {
   margin-bottom: 16px;
 }
 
-/* モーダル */
+/* モーダル画像拡大 */
 .modal-img-bg {
   position: fixed;
   top: 0;
