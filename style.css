@@ -51,6 +51,8 @@ header h1 {
   transition: all 0.2s ease;
   display: inline-block;
   text-align: center;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .cta-button:hover {
@@ -87,7 +89,6 @@ ul {
   padding-left: 1.5em;
 }
 
-/* プロフィール画像 */
 .profile-photo {
   width: 120px;
   height: 120px;
@@ -111,6 +112,20 @@ ul {
   font-weight: bold;
   font-size: 1.1rem;
   transition: background 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-title::after {
+  content: '＋';
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-title::after {
+  content: '－';
+  transform: rotate(0deg);
 }
 
 .accordion-title:hover {
