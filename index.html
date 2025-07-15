@@ -70,45 +70,7 @@
       font-weight: 600;
     }
     ul { padding-left: 1.5em; }
-    .accordion-item { margin-bottom: 20px; }
-    .accordion-toggle { display: none; }
-    .accordion-title {
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      font-size: 1.2em;
-      cursor: pointer;
-      background: #e3f2fd;
-      padding: 12px 16px;
-      border-radius: 8px;
-      transition: background 0.2s;
-    }
-    .accordion-title:hover { background: #bbdefb; }
-    .accordion-title::before {
-      content: '▶';
-      display: inline-block;
-      margin-right: 12px;
-      font-size: 1.2em;
-      transition: transform 0.2s;
-    }
-    .accordion-toggle:checked + .accordion-title::before {
-      content: '▼';
-      transform: rotate(90deg);
-    }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s, padding 0.3s;
-      background: #fff;
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      padding: 0 16px;
-      text-align: center;
-    }
-    .accordion-toggle:checked + .accordion-title + .accordion-content {
-      max-height: 4000px;
-      padding: 16px;
-    }
+
     .zoomable-img {
       width: 100%;
       max-width: 320px;
@@ -118,6 +80,7 @@
       display: block;
       cursor: zoom-in;
     }
+
     footer {
       background: #eee;
       text-align: center;
@@ -125,6 +88,7 @@
       padding: 20px 0;
       margin-top: 40px;
     }
+
     .contact {
       list-style: none;
       padding: 0;
@@ -134,6 +98,7 @@
       gap: 24px;
       flex-wrap: wrap;
     }
+
     .contact a {
       text-decoration: none !important;
       color: inherit;
@@ -142,25 +107,95 @@
       gap: 8px;
       line-height: 1.5;
     }
+
     .contact span {
       font-size: 24px;
       display: inline-block;
       line-height: 1;
     }
+
     .contact img {
       vertical-align: middle;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>濱田慎一郎</h1>
-      <p class="tagline">AIと共に、業務を一歩先へ</p>
-    </div>
-  </header>
-
+<header>
+  <div class="container">
+    <!-- ▼ 追加：プロフィール画像 -->
+    <img src="face.jpg" alt="プロフィール写真" class="profile-photo" />
+    <!-- ▲ ここまで -->
+    <h1>濱田慎一郎</h1>
+    <p class="tagline">AIと共に、業務を一歩先へ</p>
+  </div>
+</header>
   <main class="container">
+    <section>
+      <h2>はじめに</h2>
+      <p>
+        「AIって興味はあるけど、どこから始めたらいいかわからない」<br />
+        「日々の業務が手作業ばかりで、もっと効率化したい」<br />
+        「社内対応や資料作成に追われて、本来の仕事に集中できない」<br /><br />
+        そんなお悩みを持つ方にこそ、AIを“使える仕組み”に変えるサポートをしています。<br />
+        専門的な知識がなくても問題ありません。<br />
+        現場の流れに合わせた導入設計とやさしい運用サポートで、無理なく仕組み化を進めていくことができます。
+      </p>
+    </section>
+
+    <section>
+      <h2>プロフィール</h2>
+      <p>
+        1993年生まれ・大阪在住のAI活用コンサルタントです。<br />
+        ITエンジニアとして7年間の実務経験を持ち、<br />
+        現在は<strong>業務効率化・自動化を目的としたAI導入支援</strong>を行っています。<br />
+        ChatGPTやOpenAI APIをはじめ、Dify、GAS、Midjourneyなど多様なツールを活用し、<br />
+        <strong>現場にフィットする形でのAI活用・ナレッジ化・プロンプト設計</strong>を得意としています。<br />
+        コンサルティングでは、論理的な課題整理と迅速な提案を重視し、<br />
+        <strong>「成果につながる実装」</strong>にこだわっています。<br />
+        これまでの技術的バックグラウンドと現場視点を活かし、<br />
+        貴社の業務に最適なソリューションをご提案いたします。
+      </p>
+    </section>
+
+    <section>
+      <h2>スキルセット（＋活用例）</h2>
+      <ul>
+        <li>プロンプト設計（例：社内FAQの自動応答、一次対応ボット）</li>
+        <li>Dify / Udify：チャットボットや業務ワークフローの構築</li>
+        <li>ChatGPT API / Claude / Gemini：社内業務自動化への応用</li>
+        <li>Google Apps Script（GAS）：スプレッドシート連携で集計・日報作成</li>
+        <li>Midjourney：画像生成を使ったプロトタイプ資料作成</li>
+        <li>cursor：AI活用環境での軽量なツール開発・改修</li>
+      </ul>
+    </section>
+    <section>
+      <h2>AI導入の流れ</h2>
+      <p>
+        チーム全体で使える仕組みづくりを重視し、以下の流れで導入をサポートします。
+      </p>
+      <ol>
+        <li><strong>無料相談：</strong>業務の悩みや課題をヒアリング</li>
+        <li><strong>課題整理：</strong>どこにAIを活かすと効果的かを明確化</li>
+        <li><strong>プロンプト設計：</strong>業務に合わせた応答・判断フローを作成</li>
+        <li><strong>試験導入（PoC）：</strong>実務に近い形でスモールスタート</li>
+        <li><strong>社内展開・改善：</strong>フィードバックをもとに改善、定着支援</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>制作物ギャラリー</h2>
+      <section class="work-item">
+        <h3>FAQ対応を自動化したミニチャット設計</h3>
+        <p><strong>▶ 課題：</strong> 中小企業では問い合わせ対応が属人化・長文化しており、毎週5時間以上の負担が発生。</p>
+        <p><strong>▶ 目的：</strong> よくある質問を自動化し、顧客対応をスピードアップ＆効率化。</p>
+        <p><strong>▶ アプローチ：</strong> ChatGPTのカスタムプロンプト＋スプレッドシート連携で、FAQボットを構築。情報は事前にカテゴライズし、回答精度を担保。</p>
+        <p><strong>▶ 想定効果：</strong> 月20時間以上の対応時間を削減。即時回答により、顧客満足度も向上。</p>
+        <p><strong>▶ 使用ツール：</strong> ChatGPT、Googleスプレッドシート、Make（旧Integromat）</p>
+        <p><strong>▶ 工夫した点：</strong> 回答トーンを自然に整えることで、“人が対応している感覚”を維持。導入後の社内運用も見据えて設計。</p>
+        <img src="images/sample-faq-bot.png" alt="FAQチャット構成図" class="zoomable-img" />
+      </section>
+    </section>
+
     <section>
       <h2>お問い合わせ</h2>
       <ul class="contact">
