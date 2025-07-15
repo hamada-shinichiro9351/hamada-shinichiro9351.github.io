@@ -270,7 +270,7 @@
 <!-- 上に戻るボタン -->
 <button id="backToTopBtn" style="display:none; position:fixed; left:50%; transform:translateX(-50%); bottom:32px; z-index:2000; background:#1976d2; color:#fff; border:none; border-radius:50%; width:53px; height:53px; font-size:1.9rem; box-shadow:0 2px 8px rgba(0,0,0,0.15); cursor:pointer; transition:opacity 0.3s; opacity:0.7;">↑</button>
 
-<!-- Difyチャットボット埋め込み -->
+<!-- Difyチャットボット -->
 <script>
   window.difyChatbotConfig = {
     token: 'osvRoZ1mKcXdO0OM',
@@ -289,23 +289,57 @@
     height: 48rem !important;
     margin-bottom: 80px !important;
   }
+
+  .accordion-title:hover {
+    background: #bbdefb;
+  }
+
+  .zoomable-img:hover {
+    opacity: 0.85;
+    transform: scale(1.02);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: zoom-in;
+  }
+
+  .modal-img-bg img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+
+  .contact a:hover {
+    color: #1C64F2;
+    text-decoration: underline;
+    font-weight: bold;
+  }
 </style>
 
 <!-- モーダル背景 -->
 <div class="modal-img-bg"></div>
 
-<!-- JavaScript：アコーディオン／モーダル／上に戻る -->
+<!-- JavaScript：アコーディオン・モーダル・戻るボタン -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // アコーディオン機能
+    // アコーディオン機能（JavaScript制御）
     const items = document.querySelectorAll(".accordion-item");
     items.forEach((item) => {
       const title = item.querySelector(".accordion-title");
+      const content = item.querySelector(".accordion-content");
+
+      if (item.classList.contains("active")) {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+
       title.addEventListener("click", () => {
         const isActive = item.classList.contains("active");
-        items.forEach((el) => el.classList.remove("active"));
+        items.forEach((el) => {
+          el.classList.remove("active");
+          el.querySelector(".accordion-content").style.maxHeight = null;
+        });
         if (!isActive) {
           item.classList.add("active");
+          content.style.maxHeight = content.scrollHeight + "px";
         }
       });
     });
@@ -314,7 +348,11 @@
     const modalBg = document.querySelector('.modal-img-bg');
     document.querySelectorAll('.zoomable-img').forEach(img => {
       img.addEventListener('click', function () {
-        modalBg.innerHTML = '<img src="' + img.src + '" alt="拡大画像">';
+        const enlargedImg = document.createElement('img');
+        enlargedImg.src = img.src;
+        enlargedImg.alt = "拡大画像";
+        modalBg.innerHTML = '';
+        modalBg.appendChild(enlargedImg);
         modalBg.classList.add('active');
       });
     });
@@ -323,7 +361,7 @@
       modalBg.innerHTML = '';
     });
 
-    // 上に戻るボタン表示制御
+    // 上に戻るボタン制御
     const backToTopBtn = document.getElementById('backToTopBtn');
     window.addEventListener('scroll', function () {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
