@@ -87,17 +87,16 @@ ul {
   padding-left: 1.5em;
 }
 
-.zoomable-img {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  border-radius: 8px;
-  margin: 12px auto;
-  display: block;
-  cursor: zoom-in;
+/* プロフィール画像 */
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
 }
 
-/* アコーディオン（JavaScript制御） */
+/* アコーディオン */
 .accordion-item {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -132,14 +131,49 @@ ul {
   padding: 16px;
 }
 
-footer {
-  background: #eee;
-  text-align: center;
-  color: #888;
-  padding: 20px 0;
-  margin-top: 40px;
+/* ズーム可能画像 */
+.zoomable-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 8px;
+  margin: 12px auto;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+.zoomable-img:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+/* モーダル拡大 */
+.modal-img-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-img-bg.active {
+  display: flex;
+}
+
+.modal-img-bg img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* お問い合わせセクション */
 .contact {
   list-style: none;
   padding: 0;
@@ -164,6 +198,7 @@ footer {
 .contact a:hover {
   color: #1C64F2;
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .contact span {
@@ -176,35 +211,22 @@ footer {
   vertical-align: middle;
 }
 
-/* プロフィール画像 */
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 16px;
+/* フッター */
+footer {
+  background: #eee;
+  text-align: center;
+  color: #888;
+  padding: 20px 0;
+  margin-top: 40px;
 }
 
-/* モーダル画像拡大 */
-.modal-img-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.75);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+/* チャットボットスタイル */
+#dify-chatbot-bubble-button {
+  background-color: #1C64F2 !important;
 }
 
-.modal-img-bg.active {
-  display: flex;
-}
-
-.modal-img-bg img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
+#dify-chatbot-bubble-window {
+  width: 32rem !important;
+  height: 48rem !important;
+  margin-bottom: 80px !important;
 }
