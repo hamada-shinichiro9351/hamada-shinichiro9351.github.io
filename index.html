@@ -24,8 +24,7 @@
         「社内対応や資料作成に追われて、本来の仕事に集中できない」<br />
         そんなお悩みを持つ方にこそ、AIを“使える仕組み”に変えるサポートをしています。<br />
         専門的な知識がなくても問題ありません。<br />
-        現場の流れに合わせた導入設計とやさしい運用サポートで、<br />
-        無理なく仕組み化を進めていくことができます。
+        現場の流れに合わせた導入設計とやさしい運用サポートで、<br />無理なく仕組み化を進めていくことができます。
       </p>
     </section>
 
@@ -51,8 +50,10 @@
         <div class="accordion-item active">
           <div class="accordion-title">▼ よくある疑問に答える、LINEチャットボット</div>
           <div class="accordion-content">
-            <img src="taikyo_line_sample.png" alt="LINEボット画面" class="zoomable-img" />
-            <p>原状回復に関する疑問にLINEからすぐに答えるチャットボット。契約書やガイドラインをもとにQ&Aを構築し、顧客満足度を底上げします。</p>
+            <img src="taikyo_line_sample.png" alt="原状回復LINEボットの画面サンプル" class="zoomable-img" />
+            <p>原状回復に関する疑問にLINEからすぐに答えるチャットボット。<br>
+              契約書や国交省ガイドラインをもとにQ&Aを構築し、実務で使える精度を実現。<br>
+              「誰かに聞かないとわからない」を解消し、顧客満足度を底上げします。</p>
             <div class="cta-wrapper">
               <a href="https://line.me/ti/p/1bxzlr18OL" target="_blank" rel="noopener noreferrer">
                 <button class="cta-button">サポートAIボットを見る</button>
@@ -64,8 +65,10 @@
         <div class="accordion-item">
           <div class="accordion-title">▶ 経費精算・就業規則チャットフロー</div>
           <div class="accordion-content">
-            <img src="taikyo_sample.png" alt="社内規定AI" class="zoomable-img" />
-            <p>「交通費の申請方法は？」「副業の申請方法は？」など、社員からの質問に即答できるAIフロー。ナレッジを整理して属人化を解消。</p>
+            <img src="taikyo_sample.png" alt="社内ナレッジAI化サンプル画面" class="zoomable-img" />
+            <p>「交通費の申請方法は？」「副業の申請方法は？」など、社員からの質問に即答できるAIフロー。<br>
+              ナレッジを整理し、Difyで社内チャットボット化。<br>
+              属人対応をなくし、情報共有をスムーズに。</p>
             <div class="cta-wrapper">
               <a href="https://udify.app/chat/i2VD7FUBt0Jttdos" target="_blank" rel="noopener noreferrer">
                 <button class="cta-button">社内規定チャットフローを見る</button>
@@ -77,9 +80,10 @@
         <div class="accordion-item">
           <div class="accordion-title">▶ 議事録ワークフロー</div>
           <div class="accordion-content">
-            <img src="gijiroku_sample2.png" alt="議事録1" class="zoomable-img" />
-            <img src="gijiroku_sample3.png" alt="議事録2" class="zoomable-img" />
-            <p>会議音声をアップするだけで、自動で要約・体裁調整された議事録を作成。記録業務の負担を大幅軽減。</p>
+            <img src="gijiroku_sample2.png" alt="議事録サンプル1" class="zoomable-img" />
+            <img src="gijiroku_sample3.png" alt="議事録サンプル2" class="zoomable-img" />
+            <p>会議音声をアップロードするだけで、自動で要約・体裁整形された議事録を生成。<br>
+              要点抽出・箇条書き・文体調整まで自動対応し、記録作業の負担を大幅軽減します。</p>
             <div class="cta-wrapper">
               <a href="https://udify.app/workflow/c5KoqdWR4a8mgKwP" target="_blank" rel="noopener noreferrer">
                 <button class="cta-button">議事録ワークフローを見る</button>
@@ -95,7 +99,8 @@
               <source src="dify_demo.mp4" type="video/mp4" />
               お使いのブラウザは動画タグに対応していません。
             </video>
-            <p>領収書をアップロードするだけで、AIが情報を抽出・一覧化。月10時間以上の作業削減を実現。</p>
+            <p>領収書の写真をアップするだけで、AIが日付・金額・発行元を抽出し、自動で一覧化。<br>
+              集計や経費精算の手間を減らすことで、月10時間以上の業務削減が可能になります。</p>
           </div>
         </div>
 
@@ -130,35 +135,34 @@
   </script>
   <script src="https://udify.app/embed.min.js" id="osvRoZ1mKcXdO0OM" defer></script>
 
-  <!-- JavaScript：アコーディオン、モーダル画像、戻るボタン -->
+  <!-- アコーディオン＆モーダル＆戻るボタン -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const items = document.querySelectorAll(".accordion-item");
-
       items.forEach((item) => {
         const title = item.querySelector(".accordion-title");
         const content = item.querySelector(".accordion-content");
 
         if (item.classList.contains("active")) {
-          content.style.display = "block";
+          content.style.maxHeight = content.scrollHeight + "px";
           title.textContent = title.textContent.replace("▶", "▼");
         }
 
         title.addEventListener("click", () => {
           const isActive = item.classList.contains("active");
-          if (isActive) {
-            item.classList.remove("active");
-            content.style.display = "none";
-            title.textContent = title.textContent.replace("▼", "▶");
-          } else {
+          if (!isActive) {
             item.classList.add("active");
-            content.style.display = "block";
+            content.style.maxHeight = content.scrollHeight + "px";
             title.textContent = title.textContent.replace("▶", "▼");
+          } else {
+            item.classList.remove("active");
+            content.style.maxHeight = null;
+            title.textContent = title.textContent.replace("▼", "▶");
           }
         });
       });
 
-      // モーダル画像拡大
+      // モーダル拡大
       const modalBg = document.querySelector('.modal-img-bg');
       document.querySelectorAll('.zoomable-img').forEach(img => {
         img.addEventListener('click', function () {
