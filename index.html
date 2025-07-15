@@ -287,16 +287,17 @@
   #dify-chatbot-bubble-window {
     width: 32rem !important;
     height: 48rem !important;
+    margin-bottom: 80px !important;
   }
 </style>
 
-<!-- モーダル画像拡大 -->
+<!-- モーダル背景 -->
 <div class="modal-img-bg"></div>
 
 <!-- JavaScript：アコーディオン／モーダル／上に戻る -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // アコーディオン
+    // アコーディオン機能
     const items = document.querySelectorAll(".accordion-item");
     items.forEach((item) => {
       const title = item.querySelector(".accordion-title");
@@ -322,7 +323,7 @@
       modalBg.innerHTML = '';
     });
 
-    // 上に戻るボタン制御
+    // 上に戻るボタン表示制御
     const backToTopBtn = document.getElementById('backToTopBtn');
     window.addEventListener('scroll', function () {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
