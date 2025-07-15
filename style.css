@@ -51,6 +51,7 @@ header h1 {
   transition: all 0.2s ease;
   display: inline-block;
   text-align: center;
+  margin: 0 auto;
 }
 
 .cta-button:hover {
@@ -61,7 +62,7 @@ header h1 {
 
 .cta-wrapper {
   text-align: center;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 main section {
@@ -88,11 +89,14 @@ h2 {
   font-weight: 600;
 }
 
+section p {
+  color: #333;
+}
+
 ul {
   padding-left: 1.5em;
 }
 
-/* プロフィール画像 */
 .profile-photo {
   width: 120px;
   height: 120px;
@@ -107,7 +111,6 @@ ul {
   border-radius: 8px;
   margin-bottom: 20px;
   overflow: hidden;
-  transition: all 0.3s ease;
 }
 
 .accordion-title {
@@ -117,7 +120,6 @@ ul {
   font-weight: bold;
   font-size: 1.1rem;
   transition: background 0.2s ease;
-  color: #1565c0;
 }
 
 .accordion-title:hover {
@@ -125,16 +127,15 @@ ul {
 }
 
 .accordion-content {
-  max-height: 0;
   overflow: hidden;
   padding: 0 16px;
   background: #fff;
-  transition: max-height 0.4s ease, padding 0.4s ease;
   border-top: 1px solid #ddd;
+  display: none;
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 2000px;
+  display: block;
   padding: 16px;
 }
 
@@ -180,7 +181,7 @@ ul {
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-/* お問い合わせセクション */
+/* お問い合わせ */
 .contact {
   list-style: none;
   padding: 0;
@@ -227,7 +228,27 @@ footer {
   margin-top: 40px;
 }
 
-/* チャットボットスタイル */
+/* 上に戻るボタン */
+#backToTopBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 10px 16px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+#backToTopBtn:hover {
+  background-color: #1565c0;
+}
+
+/* チャットボット */
 #dify-chatbot-bubble-button {
   background-color: #1C64F2 !important;
 }
@@ -236,21 +257,4 @@ footer {
   width: 32rem !important;
   height: 48rem !important;
   margin-bottom: 80px !important;
-}
-
-/* 上に戻るボタン */
-#backToTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  cursor: pointer;
-  display: none;
-  z-index: 10000;
 }
