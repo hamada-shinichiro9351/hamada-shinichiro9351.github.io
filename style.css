@@ -87,7 +87,6 @@ ul {
   padding-left: 1.5em;
 }
 
-/* プロフィール画像 */
 .profile-photo {
   width: 120px;
   height: 120px;
@@ -111,7 +110,6 @@ ul {
   font-weight: bold;
   font-size: 1.1rem;
   transition: background 0.2s ease;
-  color: #0d47a1;
 }
 
 .accordion-title:hover {
@@ -125,11 +123,12 @@ ul {
   background: #fff;
   transition: max-height 0.4s ease, padding 0.4s ease;
   border-top: 1px solid #ddd;
+  font-size: 0.95rem; /* 本文全体を少し小さく */
 }
 
-.accordion-item.active .accordion-content {
-  max-height: 5000px;
-  padding: 16px;
+.accordion-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* ズーム可能画像 */
@@ -149,7 +148,7 @@ ul {
   transform: scale(1.02);
 }
 
-/* モーダル拡大 */
+/* モーダル */
 .modal-img-bg {
   position: fixed;
   top: 0;
@@ -174,7 +173,7 @@ ul {
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-/* お問い合わせセクション */
+/* お問い合わせ */
 .contact {
   list-style: none;
   padding: 0;
@@ -212,12 +211,6 @@ ul {
   vertical-align: middle;
 }
 
-/* CTA中央寄せ */
-.cta-wrapper {
-  text-align: center;
-  margin-top: 16px;
-}
-
 /* フッター */
 footer {
   background: #eee;
@@ -227,24 +220,31 @@ footer {
   margin-top: 40px;
 }
 
-/* 戻るボタン */
+/* CTA中央配置 */
+.cta-wrapper {
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* 上に戻るボタン */
 #backToTopBtn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #1976d2;
+  bottom: 24px;
+  right: 24px;
+  background: #1976d2;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
   cursor: pointer;
   display: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   z-index: 10000;
 }
 
-/* チャットボットスタイル */
+/* チャットボット */
 #dify-chatbot-bubble-button {
   background-color: #1C64F2 !important;
 }
