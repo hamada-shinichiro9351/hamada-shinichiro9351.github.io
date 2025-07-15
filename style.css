@@ -150,7 +150,6 @@ ul {
   cursor: zoom-in;
 }
 
-/* ▼ ここから追加：プロフィール画像のスタイル */
 .profile-photo {
   width: 120px;
   height: 120px;
@@ -158,7 +157,6 @@ ul {
   object-fit: cover;
   margin-bottom: 16px;
 }
-/* ▲ ここまで追加 */
 
 footer {
   background: #eee;
@@ -166,7 +164,6 @@ footer {
   color: #888;
   padding: 20px 0;
   margin-top: 40px;
-
 }
 
 .contact {
@@ -181,12 +178,19 @@ footer {
 
 /* ▼ 修正ポイントここから ▼ */
 .contact a {
-  text-decoration: none !important; /* ← 必ず消えるように !important を追加 */
+  text-decoration: none !important;
   color: inherit;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+.contact a:hover {
+  color: #1976d2;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .contact span {
