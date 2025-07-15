@@ -39,7 +39,40 @@ header h1 {
   font-weight: 300;
 }
 
-/* セクションのタイトルと本文に色の差 */
+.cta-button {
+  background-color: #1976d2;
+  color: white;
+  padding: 12px 24px;
+  border: 2px solid #1565c0;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #1565c0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+main section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 32px;
+  padding: 32px 24px;
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 h2 {
   color: #2c3e50;
   border-left: 4px solid #2c3e50;
@@ -50,29 +83,8 @@ h2 {
   font-weight: 600;
 }
 
-p {
-  color: #444;
-  line-height: 1.8;
-}
-
-main section {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  margin-bottom: 32px;
-  padding: 32px 24px;
-  animation: fadeIn 0.6s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+ul {
+  padding-left: 1.5em;
 }
 
 /* プロフィール画像 */
@@ -99,6 +111,7 @@ main section {
   font-weight: bold;
   font-size: 1.1rem;
   transition: background 0.2s ease;
+  color: #0d47a1;
 }
 
 .accordion-title:hover {
@@ -107,7 +120,7 @@ main section {
 
 .accordion-content {
   max-height: 0;
-  overflow: visible;
+  overflow: hidden;
   padding: 0 16px;
   background: #fff;
   transition: max-height 0.4s ease, padding 0.4s ease;
@@ -136,31 +149,29 @@ main section {
   transform: scale(1.02);
 }
 
-/* CTAボタン */
-.cta-button {
-  background-color: #1976d2;
-  color: white;
-  padding: 12px 24px;
-  border: 2px solid #1565c0;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  display: inline-block;
-  text-align: center;
+/* モーダル拡大 */
+.modal-img-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-.cta-button:hover {
-  background-color: #1565c0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+.modal-img-bg.active {
+  display: flex;
 }
 
-/* CTAボタン中央揃え */
-.cta-wrapper {
-  text-align: center;
-  margin-top: 16px;
+.modal-img-bg img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
 /* お問い合わせセクション */
@@ -186,7 +197,7 @@ main section {
 }
 
 .contact a:hover {
-  color: #1c64f2;
+  color: #1C64F2;
   text-decoration: underline;
   font-weight: bold;
 }
@@ -201,6 +212,12 @@ main section {
   vertical-align: middle;
 }
 
+/* CTA中央寄せ */
+.cta-wrapper {
+  text-align: center;
+  margin-top: 16px;
+}
+
 /* フッター */
 footer {
   background: #eee;
@@ -210,55 +227,26 @@ footer {
   margin-top: 40px;
 }
 
-/* モーダル背景 */
-.modal-img-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.modal-img-bg.active {
-  display: flex;
-}
-
-.modal-img-bg img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
-
-/* 上に戻るボタン */
+/* 戻るボタン */
 #backToTopBtn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  display: none;
-  padding: 10px 14px;
-  font-size: 18px;
   background-color: #1976d2;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 999;
+  display: none;
+  z-index: 10000;
 }
 
-#backToTopBtn:hover {
-  background-color: #1565c0;
-}
-
-/* Difyチャットボット */
+/* チャットボットスタイル */
 #dify-chatbot-bubble-button {
-  background-color: #1c64f2 !important;
+  background-color: #1C64F2 !important;
 }
 
 #dify-chatbot-bubble-window {
