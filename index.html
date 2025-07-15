@@ -182,41 +182,149 @@
       </ol>
     </section>
 
-    <section>
-      <h2>制作物ギャラリー</h2>
-      <section class="work-item">
-        <h3>FAQ対応を自動化したミニチャット設計</h3>
-        <p><strong>▶ 課題：</strong> 中小企業では問い合わせ対応が属人化・長文化しており、毎週5時間以上の負担が発生。</p>
-        <p><strong>▶ 目的：</strong> よくある質問を自動化し、顧客対応をスピードアップ＆効率化。</p>
-        <p><strong>▶ アプローチ：</strong> ChatGPTのカスタムプロンプト＋スプレッドシート連携で、FAQボットを構築。情報は事前にカテゴライズし、回答精度を担保。</p>
-        <p><strong>▶ 想定効果：</strong> 月20時間以上の対応時間を削減。即時回答により、顧客満足度も向上。</p>
-        <p><strong>▶ 使用ツール：</strong> ChatGPT、Googleスプレッドシート、Make（旧Integromat）</p>
-        <p><strong>▶ 工夫した点：</strong> 回答トーンを自然に整えることで、“人が対応している感覚”を維持。導入後の社内運用も見据えて設計。</p>
-        <img src="images/sample-faq-bot.png" alt="FAQチャット構成図" class="zoomable-img" />
-      </section>
-    </section>
+<section>
+  <h2>制作物ギャラリー</h2>
+  <div class="works-gallery">
 
-    <section>
-      <h2>お問い合わせ</h2>
-      <ul class="contact">
-        <li>
-          <a href="mailto:hamada.shinichiro9351@gmail.com">
-            <span>✉️</span> メールで連絡
+    <div class="accordion-item">
+      <input type="checkbox" id="item1" class="accordion-toggle" checked />
+      <label for="item1" class="accordion-title" tabindex="0">よくある疑問に答える、LINEチャットボット</label>
+      <div class="accordion-content">
+        <img src="taikyo_line_sample.png" alt="原状回復LINEボットの画面サンプル" class="zoomable-img" />
+        <p>原状回復に関する疑問にLINEからすぐに答えるチャットボット。<br>
+        契約書や国交省ガイドラインをもとにQ&Aを構築し、実務で使える精度を実現。<br>
+        「誰かに聞かないとわからない」を解消し、顧客満足度を底上げします。</p>
+        <div style="text-align:center; margin-top:16px;">
+          <a href="https://line.me/R/ti/p/@863nhxkq" target="_blank" rel="noopener noreferrer">
+            <button class="cta-button">サポートAIボットを見る</button>
           </a>
-        </li>
-        <li>
-          <a href="https://line.me/ti/p/xxxxxxxx">
-            <span>💬</span> LINEで連絡
-          </a>
-        </li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 濱田慎一郎</p>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <div class="accordion-item">
+      <input type="checkbox" id="item2" class="accordion-toggle" />
+      <label for="item2" class="accordion-title" tabindex="0">社内規定チャットフロー</label>
+      <div class="accordion-content">
+        <img src="taikyo_sample.png" alt="社内ナレッジAI化サンプル画面" class="zoomable-img" />
+        <p>「経費精算ルールは？」「打刻漏れの対応は？」など、社員からの質問に即答できるAIフロー。<br>
+        ナレッジを整理し、Difyで社内チャットボット化。属人対応をなくし、情報共有をスムーズに。</p>
+        <div style="text-align:center; margin-top:16px;">
+          <a href="https://udify.app/chat/i2VD7FUBt0Jttdos" target="_blank" rel="noopener noreferrer">
+            <button class="cta-button">社内規定チャットフローを見る</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <input type="checkbox" id="item3" class="accordion-toggle" />
+      <label for="item3" class="accordion-title" tabindex="0">議事録ワークフロー</label>
+      <div class="accordion-content">
+        <img src="gijiroku_sample2.png" alt="AI議事録作成画面サンプル" class="zoomable-img" />
+        <img src="gijiroku_sample3.png" alt="AI議事録作成画面サンプル2" class="zoomable-img" />
+        <p>会議音声をアップロードするだけで、自動で要約・体裁整形された議事録を生成。<br>
+        要点抽出・箇条書き・文体調整まで自動対応し、記録作業の負担を大幅軽減します。</p>
+        <div style="text-align:center; margin-top:16px;">
+          <a href="https://udify.app/workflow/c5KoqdWR4a8mgKwP" target="_blank" rel="noopener noreferrer">
+            <button class="cta-button">議事録ワークフローを見る</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <input type="checkbox" id="item4" class="accordion-toggle" />
+      <label for="item4" class="accordion-title" tabindex="0">領収書自動管理ツール</label>
+      <div class="accordion-content">
+        <video controls style="width:100%; max-width:320px; border-radius:8px; margin:12px auto; display:block;">
+          <source src="dify_demo.mp4" type="video/mp4">
+          お使いのブラウザは動画タグに対応していません。
+        </video>
+        <p>領収書の写真をアップするだけで、AIが日付・金額・宛名を抽出し、自動で一覧化。<br>
+        集計や経費精算の手間を減らすことで、月10時間以上の業務削減が可能になります。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>お問い合わせ</h2>
+  <ul class="contact">
+    <li>
+      <a href="mailto:hamada.shinichiro9351@gmail.com">
+        <span>✉️</span> メールで連絡
+      </a>
+    </li>
+    <li>
+    <a href="https://line.me/ti/p/1bxzlr18OL">
+        <span>💬</span> LINEで連絡
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 濱田慎一郎</p>
+  </div>
+</footer>
+
+<!-- 上に戻るボタン -->
+<button id="backToTopBtn" style="display:none; position:fixed; left:50%; transform:translateX(-50%); bottom:32px; z-index:2000; background:#1976d2; color:#fff; border:none; border-radius:50%; width:53px; height:53px; font-size:1.9rem; box-shadow:0 2px 8px rgba(0,0,0,0.15); cursor:pointer; transition:opacity 0.3s; opacity:0.7;">↑</button>
+
+<!-- Difyチャットボット埋め込み -->
+<script>
+  window.difyChatbotConfig = {
+    token: 'osvRoZ1mKcXdO0OM',
+    systemVariables: {},
+    userVariables: {},
+  };
+</script>
+<script src="https://udify.app/embed.min.js" id="osvRoZ1mKcXdO0OM" defer></script>
+
+<style>
+  #dify-chatbot-bubble-button {
+    background-color: #1C64F2 !important;
+  }
+  #dify-chatbot-bubble-window {
+    width: 32rem !important;
+    height: 48rem !important;
+  }
+</style>
+
+<!-- モーダル画像拡大 -->
+<div class="modal-img-bg"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let modalBg = document.querySelector('.modal-img-bg');
+    document.querySelectorAll('.zoomable-img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function() {
+        modalBg.innerHTML = '<img src="' + img.src + '" alt="拡大画像">';
+        modalBg.classList.add('active');
+      });
+    });
+    modalBg.addEventListener('click', function() {
+      modalBg.classList.remove('active');
+      modalBg.innerHTML = '';
+    });
+
+    // 上に戻るボタンの表示制御
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', function() {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
