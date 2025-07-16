@@ -11,7 +11,7 @@
     <div class="container">
       <img src="face.jpg" alt="プロフィール写真" class="profile-photo" />
       <h1>濱田慎一郎</h1>
-      <p class="tagline">AIと共に、業務を一歩先へ</p>
+      <p class="tagline">業務改善の相談役として、AIを実務に活かします</p>
     </div>
   </header>
 
@@ -29,6 +29,18 @@
     </section>
 
     <section>
+      <h2>対応可能な業務</h2>
+      <ul>
+        <li>ChatGPTを活用したチャットボット構築（Dify / LINE公式）</li>
+        <li>社内規定・業務フローのAI自動応答化（FAQ化）</li>
+        <li>提案資料・議事録・文書の自動生成フロー設計</li>
+        <li>Excel自動化・GASによる業務効率化</li>
+        <li>ITツール導入と運用のサポート（小規模事業者向け）</li>
+        <li>チームで使えるプロンプト設計・改善</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>プロフィール</h2>
       <p>
         1993年生まれ・大阪在住のAI活用コンサルタントです。<br />
@@ -41,7 +53,6 @@
         これまでの技術的バックグラウンドを活かし、最適なソリューションをご提案いたします。
       </p>
     </section>
-
     <section>
       <h2>制作物ギャラリー</h2>
       <div class="works-gallery">
@@ -107,6 +118,7 @@
 
     <section id="contact">
       <h2>お問い合わせ</h2>
+      <p>業務内容の詳細やご相談は、以下よりお気軽にお問い合わせください。</p>
       <ul class="contact">
         <li><a href="mailto:hamada.shinichiro9351@gmail.com"><span>✉️</span> メールで連絡</a></li>
         <li><a href="https://line.me/ti/p/1bxzlr18OL"><span>💬</span> LINEで連絡</a></li>
@@ -123,15 +135,24 @@
   <button id="backToTopBtn">↑</button>
   <div class="modal-img-bg"></div>
 
-  <!-- Difyチャットボット -->
+  <!-- Difyチャットボット（更新済み） -->
   <script>
     window.difyChatbotConfig = {
-      token: 'osvRoZ1mKcXdO0OM',
+      token: '7KEZjPjuudlApQZ9',
       systemVariables: {},
       userVariables: {},
     };
   </script>
-  <script src="https://udify.app/embed.min.js" id="osvRoZ1mKcXdO0OM" defer></script>
+  <script src="https://udify.app/embed.min.js" id="7KEZjPjuudlApQZ9" defer></script>
+  <style>
+    #dify-chatbot-bubble-button {
+      background-color: #1C64F2 !important;
+    }
+    #dify-chatbot-bubble-window {
+      width: 24rem !important;
+      height: 40rem !important;
+    }
+  </style>
 
   <!-- アコーディオン＆モーダル＆戻るボタン -->
   <script>
@@ -160,7 +181,6 @@
         });
       });
 
-      // モーダル拡大
       const modalBg = document.querySelector('.modal-img-bg');
       document.querySelectorAll('.zoomable-img').forEach(img => {
         img.addEventListener('click', function () {
@@ -176,7 +196,6 @@
         modalBg.innerHTML = '';
       });
 
-      // 上に戻るボタン
       const backToTopBtn = document.getElementById('backToTopBtn');
       window.addEventListener('scroll', () => {
         backToTopBtn.style.display =
