@@ -208,11 +208,6 @@ ul {
   line-height: 1;
 }
 
-.contact img {
-  vertical-align: middle;
-}
-
-/* フッター */
 footer {
   background: #eee;
   text-align: center;
@@ -221,7 +216,6 @@ footer {
   margin-top: 40px;
 }
 
-/* CTA中央配置 */
 .cta-wrapper {
   text-align: center;
   margin-top: 16px;
