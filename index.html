@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>業務の仕組み化 × AI活用｜濱田慎一郎</title>
-  <meta name="description" content="ChatGPTやDifyを活用し、業務効率化や自動化を支援。仕組み化で“業務が回る”状態を実現します。丁寧なヒアリングと使いやすい設計で、“頼んでよかった”と思える支援を。">
+  <meta name="description" content="ChatGPTやDifyを活用し、業務効率化や自動化を支援します。AIの導入・運用・プロンプト設計まで、実務に根ざしたサポートを提供。">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -79,6 +79,9 @@
       <p>初回相談は無料で、雑談レベルからでも大歓迎です。</p>
     </section>
 
+    <section>
+      <h2>制作物ギャラリー</h2>
+      <div class="works-gallery">
     <section>
       <h2>制作物ギャラリー</h2>
       <div class="works-gallery">
@@ -190,5 +193,38 @@
     };
   </script>
   <script src="https://udify.app/embed.min.js" id="7KEZjPjuudlApQZ9" defer></script>
+
+  <!-- アコーディオン動作用スクリプト -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const items = document.querySelectorAll('.accordion-item');
+
+      items.forEach(item => {
+        const title = item.querySelector('.accordion-title');
+        const content = item.querySelector('.accordion-content');
+
+        if (item.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.paddingTop = '16px';
+          content.style.paddingBottom = '16px';
+        }
+
+        title.addEventListener('click', function () {
+          const isOpen = item.classList.contains('active');
+          item.classList.toggle('active');
+
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.paddingTop = '16px';
+            content.style.paddingBottom = '16px';
+          } else {
+            content.style.maxHeight = null;
+            content.style.paddingTop = '0';
+            content.style.paddingBottom = '0';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
