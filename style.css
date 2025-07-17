@@ -130,6 +130,8 @@ footer {
 }
 
 .accordion-title {
+  position: relative;
+  padding-right: 36px;
   padding: 16px;
   background: #e3f2fd;
   cursor: pointer;
@@ -144,6 +146,17 @@ footer {
 }
 .accordion-item.active .accordion-title::before {
   content: '▼';
+}
+
+.accordion-title::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 4px;
+  background: #1976d2;
+  border-radius: 2px;
+  margin-left: 12px;
+  vertical-align: middle;
 }
 
 .accordion-content {
