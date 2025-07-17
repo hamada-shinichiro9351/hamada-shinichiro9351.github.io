@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -16,7 +15,7 @@ body {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 800px;
   margin: auto;
   padding: 24px;
 }
@@ -26,14 +25,6 @@ header {
   color: #fff;
   padding: 48px 0 32px 0;
   text-align: center;
-}
-
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 12px;
 }
 
 header h1 {
@@ -49,80 +40,98 @@ header h1 {
 }
 
 .cta-wrapper {
-  margin-top: 20px;
+  margin-top: 24px;
+  text-align: center;
 }
 
-.cta-button-white-outline,
-.cta-button-blue {
-  font-size: 1rem;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+.cta-wrapper.center {
+  text-align: center;
 }
 
 .cta-button-white-outline {
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .cta-button-white-outline:hover {
-  background-color: #fff;
+  background-color: white;
   color: #1976d2;
 }
 
 .cta-button-blue {
   background-color: #1976d2;
+  color: white;
   border: none;
-  color: #fff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .cta-button-blue:hover {
-  background-color: #1565c0;
+  background-color: white;
+  color: #1976d2;
+  border: 2px solid #1976d2;
+}
+
+main section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 32px;
+  padding: 24px;
 }
 
 h2 {
-  font-size: 1.6rem;
-  margin-top: 40px;
-  margin-bottom: 16px;
   color: #1976d2;
+  margin-top: 0;
 }
 
-ul,
-ol {
+ul {
   padding-left: 20px;
 }
 
-ul.contact {
-  list-style: none;
-  padding: 0;
+footer {
+  background: #f0f0f0;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
 }
 
-ul.contact li {
-  margin-bottom: 10px;
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 16px;
 }
 
-ul.contact a {
-  text-decoration: none;
-  color: #1976d2;
-  font-weight: bold;
-}
-
-ul.contact a:hover {
-  text-decoration: underline;
+.works-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .accordion-item {
   border: 1px solid #ccc;
-  margin-bottom: 16px;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .accordion-title {
-  background-color: #e3f2fd;
-  padding: 12px 16px;
+  padding: 16px;
+  background: #e3f2fd;
   cursor: pointer;
   font-weight: bold;
 }
@@ -131,11 +140,7 @@ ul.contact a:hover {
   padding: 0 16px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.accordion-item.active .accordion-title {
-  background-color: #bbdefb;
+  transition: all 0.3s ease;
 }
 
 .accordion-item.active .accordion-content {
@@ -144,52 +149,68 @@ ul.contact a:hover {
 }
 
 .zoomable-img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin: 12px 0;
+  border-radius: 4px;
   cursor: pointer;
-}
-
-footer {
-  background-color: #eceff1;
-  padding: 16px 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-#backToTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  cursor: pointer;
-  display: none;
-  z-index: 1000;
+  margin-bottom: 12px;
 }
 
 .modal-img-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
   display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .modal-img-bg img {
   max-width: 90%;
   max-height: 90%;
   border-radius: 8px;
+}
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-hours {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #555;
 }
