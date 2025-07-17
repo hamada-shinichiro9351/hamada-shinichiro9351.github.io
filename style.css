@@ -1,4 +1,4 @@
-
+/* 共通設定 */
 * {
   box-sizing: border-box;
 }
@@ -21,6 +21,7 @@ body {
   padding: 24px;
 }
 
+/* ヘッダー */
 header {
   background: #1976d2;
   color: #fff;
@@ -40,6 +41,15 @@ header h1 {
   font-weight: 300;
 }
 
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+/* CTAボタン */
 .cta-button {
   background-color: #1976d2;
   color: white;
@@ -60,6 +70,12 @@ header h1 {
   transform: translateY(-2px);
 }
 
+.cta-wrapper {
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* セクション設定 */
 main section {
   background: #fff;
   border-radius: 10px;
@@ -88,12 +104,11 @@ ul {
   padding-left: 1.5em;
 }
 
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 16px;
+section ul {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 1em;
+  line-height: 1.6;
 }
 
 /* アコーディオン */
@@ -130,6 +145,13 @@ ul {
 .accordion-content p {
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+.accordion-content strong {
+  color: #1976d2;
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: bold;
 }
 
 /* ズーム可能画像 */
@@ -175,6 +197,18 @@ ul {
 }
 
 /* お問い合わせ */
+#contact {
+  background: #f0f4f8;
+  border: 2px solid #cfd8dc;
+  padding: 32px 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#contact h2 {
+  color: #0d47a1;
+}
+
 .contact {
   list-style: none;
   padding: 0;
@@ -193,39 +227,31 @@ ul {
 }
 
 .contact a {
-  text-decoration: none !important;
-  color: inherit;
+  background-color: white;
+  border: 1px solid #1C64F2;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: #1C64F2;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   line-height: 1.5;
-  transition: color 0.2s, text-decoration 0.2s;
   cursor: pointer;
 }
 
 .contact a:hover {
-  color: #1C64F2;
-  text-decoration: underline;
-  font-weight: bold;
+  background-color: #1C64F2;
+  color: white;
+  text-decoration: none;
 }
 
 .contact span {
   font-size: 24px;
   display: inline-block;
   line-height: 1;
-}
-
-footer {
-  background: #eee;
-  text-align: center;
-  color: #888;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-.cta-wrapper {
-  text-align: center;
-  margin-top: 16px;
 }
 
 /* 上に戻るボタン */
@@ -258,52 +284,7 @@ footer {
   margin-bottom: 80px !important;
 }
 
-/* ▼ お問い合わせセクション視認性改善（背景＋リンク装飾） */
-#contact {
-  background: #f0f4f8;
-  border: 2px solid #cfd8dc;
-  padding: 32px 24px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-#contact h2 {
-  color: #0d47a1;
-}
-
-.contact a {
-  background-color: white;
-  border: 1px solid #1C64F2;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  color: #1C64F2;
-}
-
-.contact a:hover {
-  background-color: #1C64F2;
-  color: white;
-  text-decoration: none;
-}
-/* ▲ お問い合わせ改善ここまで */
-
-/* ▼ 選ばれる理由・制作物・スマホ対応のCSS調整 */
-section ul {
-  list-style: disc inside;
-  margin: 0;
-  padding-left: 1em;
-  line-height: 1.6;
-}
-
-.accordion-content strong {
-  color: #1976d2;
-  display: inline-block;
-  margin-bottom: 4px;
-  font-weight: bold;
-}
-
+/* レスポンシブ対応 */
 @media (max-width: 480px) {
   header h1 {
     font-size: 1.8rem;
@@ -330,4 +311,3 @@ section ul {
     font-size: 0.95rem;
   }
 }
-/* ▲ HTML構成に合わせた最終調整ここまで */
