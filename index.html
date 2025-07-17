@@ -94,8 +94,7 @@
         <img src="taikyo_line_sample.png" alt="原状回復LINEボットの画面サンプル" class="zoomable-img" loading="lazy" />
         <p>
         原状回復に関する問い合わせ対応を、LINE上で完結できるように構築したチャットボットです。<br>
-        国交省のガイドラインに準拠しながら、実務に即したQ&Aを設計。
-        曖昧な質問でも正確に答えられるよう、プロンプト調整にも細かく対応しました。
+        国交省のガイドラインに準拠しながら、実務に即したQ&Aを設計。<br>
         </p>
         <div class="cta-wrapper center">
           <a href="https://line.me/ti/p/1bxzlr18OL" target="_blank" rel="noopener noreferrer">
@@ -110,9 +109,8 @@
       <div class="accordion-content">
         <img src="taikyo_sample.png" alt="社内ナレッジAI化サンプル画面" class="zoomable-img" loading="lazy" />
         <p>
-          社内の経費精算ルールや就業規則に関する質問を、チャット形式でいつでも確認できる仕組みです。<br>
-          属人化していた問い合わせ対応を自動化することで、業務の平準化と効率化を実現しました。<br>
-          表現のゆれや口語的な質問にも対応できるよう、プロンプトとナレッジ構造を最適化しています。
+          社内の経費精算ルールや就業規則に関する質問を、チャット形式で確認できる仕組みです。<br>
+          属人化していた問い合わせ対応を自動化することで、業務の効率化を実現しました。<br>
         </p>
         <div class="cta-wrapper center">
           <a href="https://udify.app/chat/i2VD7FUBt0Jttdos" target="_blank" rel="noopener noreferrer">
@@ -149,7 +147,8 @@
               お使いのブラウザは動画タグに対応していません。
             </video>
             <p>
-              紙やPDFの領収書から、日付・金額・発行元などの情報を自動で抽出・分類するツールです。<br>
+              紙やPDFの領収書から、日付・金額・発行元などの情報を<br>
+              自動で抽出・分類するツールです。<br>
               整理や手入力の手間を減らし、経費管理をスムーズにしたい方向けに構築しました。<br>
               項目のばらつきにも対応できるよう、AIの抽出精度も細かく調整しています。
             </p>
@@ -207,41 +206,10 @@
 
       items.forEach(item => {
         const title = item.querySelector('.accordion-title');
-        const content = item.querySelector('.accordion-content');
-
-        // 初期表示時（activeなもの）の高さを正しく設定
-        if (item.classList.contains('active')) {
-          content.style.maxHeight = 'none'; // 一度解除
-          content.style.paddingTop = '16px';
-          content.style.paddingBottom = '16px';
-          // 強制再描画で高さを取得
-          void content.offsetWidth;
-          const height = content.scrollHeight;
-          content.style.maxHeight = height + 'px';
-        } else {
-          content.style.maxHeight = '0';
-          content.style.paddingTop = '0';
-          content.style.paddingBottom = '0';
-        }
+        // const content = item.querySelector('.accordion-content');
 
         title.addEventListener('click', function () {
-          const isOpen = item.classList.contains('active');
           item.classList.toggle('active');
-
-          if (!isOpen) {
-            // 開くとき
-            content.style.maxHeight = 'none'; // 一度解除
-            content.style.paddingTop = '16px';
-            content.style.paddingBottom = '16px';
-            void content.offsetWidth;
-            const height = content.scrollHeight;
-            content.style.maxHeight = height + 'px';
-          } else {
-            // 閉じるとき
-            content.style.maxHeight = '0';
-            content.style.paddingTop = '0';
-            content.style.paddingBottom = '0';
-          }
         });
       });
     });
