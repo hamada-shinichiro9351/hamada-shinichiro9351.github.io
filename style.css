@@ -146,6 +146,7 @@ footer {
 .accordion-item.active .accordion-content {
   padding-top: 16px;
   padding-bottom: 16px;
+  max-height: none;
 }
 
 .zoomable-img {
@@ -212,5 +213,5 @@ footer {
   text-align: center;
   margin-top: 12px;
   font-size: 0.95rem;
-  color: #555;
+  color: #222;
 }
