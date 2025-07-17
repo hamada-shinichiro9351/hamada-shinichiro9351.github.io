@@ -1,216 +1,239 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>業務の仕組み化 × AI活用｜濱田慎一郎</title>
-  <meta name="description" content="ChatGPTやDifyを活用し、業務効率化や自動化を支援します。AIの導入・運用・プロンプト設計まで、実務に根ざしたサポートを提供。">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <div class="container">
-      <img src="face.jpg" alt="プロフィール写真" class="profile-photo" />
-      <h1>濱田慎一郎</h1>
-      <p class="tagline">仕組みが変われば、業務が変わる。</p>
-      <div class="cta-wrapper">
-        <a href="#contact">
-          <button class="cta-button-white-outline">無料で相談してみる</button>
-        </a>
-      </div>
-    </div>
-  </header>
+* {
+  box-sizing: border-box;
+}
 
-  <main class="container">
-    <section>
-      <h2>はじめに</h2>
-      <p>
-        「AIって興味はあるけど、どこから始めたらいいかわからない」<br />
-        「日々の業務が手作業ばかりで、もっと効率化したい」<br />
-        「社内対応や資料作成に追われて、本来の仕事に集中できない」<br />
-        そんなお悩みを持つ方にこそ、AIを“使える仕組み”に変えるサポートをしています。<br />
-        専門的な知識がなくても問題ありません。<br />
-        現場の流れに合わせた導入設計と運用サポートで、無理なく仕組み化を進めていく事が可能です。
-      </p>
-    </section>
+::selection {
+  background: #1976d2;
+  color: white;
+}
 
-    <section>
-      <h2>“頼んでよかった”と思っていただけるように</h2>
-      <ul>
-        <li>目的やお悩みを丁寧にヒアリングし、ご要望に沿った提案を行います</li>
-        <li>ただ作るだけでなく、使いやすさ・見やすさにも配慮した設計を心がけています</li>
-        <li>納品後も安心。ちょっとしたご相談や修正にも柔軟に対応いたします</li>
-      </ul>
-    </section>
+body {
+  font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: #f4f7fa;
+  color: #222;
+  margin: 0;
+}
 
-    <section>
-      <h2>プロフィール</h2>
-      <p>
-        1993年生まれ・大阪在住のAI活用コンサルタントです。<br />
-        ITエンジニアとして7年間の実務経験を持ち、<br />
-        現在は<strong>業務効率化・自動化を目的としたAI導入支援</strong>を行っています。<br />
-        ChatGPTやOpenAI APIをはじめ、Dify、GAS、Midjourneyなど多様なツールを活用し、<br />
-        <strong>現場にフィットする形でのAI活用・ナレッジ化・プロンプト設計</strong>を得意としています。<br />
-        コンサルティングでは、論理的な課題整理と迅速な提案を重視し、<br />
-        <strong>「成果につながる実装」</strong>にこだわっています。<br />
-        これまでの技術的バックグラウンドを活かし、最適なソリューションをご提案いたします。
-      </p>
-    </section>
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 24px;
+}
 
-    <section>
-      <h2>対応業務</h2>
-      <ul>
-        <li>プロンプト設計（例：社内FAQの自動応答、一次対応ボット）</li>
-        <li>Dify / Udify：チャットボットや業務ワークフローの構築</li>
-        <li>ChatGPT API / Claude / Gemini：社内業務自動化への応用</li>
-        <li>Google Apps Script（GAS）：スプレッドシート連携で集計・日報作成</li>
-        <li>Midjourney：画像生成を使ったプロトタイプ資料作成</li>
-        <li>cursor：AI活用環境での軽量なツール開発・改修</li>
-      </ul>
-      <p>
-        上記のような支援に限らず、「AIって何ができるの？」という段階のご相談や、<br />
-        業種・職種に応じた具体的な活用相談まで柔軟に対応可能です。
-      </p>
-    </section>
+header {
+  background: #1976d2;
+  color: #fff;
+  padding: 48px 0 32px 0;
+  text-align: center;
+}
 
-    <section>
-      <h2>導入の流れ</h2>
-      <ol>
-        <li>お問い合わせ（フォームやLINE）</li>
-        <li>ご希望や課題をざっくりお伺い</li>
-        <li>ご提案（方向性・進め方のご提示）</li>
-        <li>必要に応じて支援や作業に移行</li>
-      </ol>
-      <p>初回相談は無料で、雑談レベルからでも大歓迎です。</p>
-    </section>
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+}
 
-    <section>
-  <h2>制作物ギャラリー</h2>
-  <div class="works-gallery">
+.tagline {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
 
-    <div class="accordion-item active">
-      <div class="accordion-title">▼ よくある疑問に答える、LINEチャットボット</div>
-      <div class="accordion-content">
-        <img src="taikyo_line_sample.png" alt="原状回復LINEボットの画面サンプル" class="zoomable-img" loading="lazy" />
-        <p>
-        原状回復に関する問い合わせ対応を、LINE上で完結できるように構築したチャットボットです。<br>
-        国交省のガイドラインに準拠しながら、実務に即したQ&Aを設計。<br>
-        </p>
-        <div class="cta-wrapper center">
-          <a href="https://line.me/ti/p/1bxzlr18OL" target="_blank" rel="noopener noreferrer">
-            <button class="cta-button-blue">サポートAIボットを見る</button>
-          </a>
-        </div>
-      </div>
-    </div>
+.cta-wrapper {
+  margin-top: 24px;
+  text-align: center;
+}
 
-    <div class="accordion-item">
-      <div class="accordion-title">▶ 経費精算・就業規則チャットフロー</div>
-      <div class="accordion-content">
-        <img src="taikyo_sample.png" alt="社内ナレッジAI化サンプル画面" class="zoomable-img" loading="lazy" />
-        <p>
-          社内の経費精算ルールや就業規則に関する質問を、チャット形式で確認できる仕組みです。<br>
-          属人化していた問い合わせ対応を自動化することで、業務の効率化を実現しました。<br>
-        </p>
-        <div class="cta-wrapper center">
-          <a href="https://udify.app/chat/i2VD7FUBt0Jttdos" target="_blank" rel="noopener noreferrer">
-            <button class="cta-button-blue">社内規定チャットフローを見る</button>
-          </a>
-        </div>
-      </div>
-    </div>
+.cta-wrapper.center {
+  text-align: center;
+}
 
-    <div class="accordion-item">
-      <div class="accordion-title">▶ 議事録ワークフロー</div>
-      <div class="accordion-content">
-        <img src="gijiroku_sample2.png" alt="議事録サンプル1" class="zoomable-img" loading="lazy" />
-        <img src="gijiroku_sample3.png" alt="議事録サンプル2" class="zoomable-img" loading="lazy" />
-        <p>
-          会議後の議事録作成を自動化するためのワークフローです。<br>
-          音声やメモをもとに、要点の抽出・文体の整形・構成の最適化までを一括処理。<br>
-          現場の負担を減らしつつ、読みやすく整理された議事録が短時間で完成するよう設計しました。<br>
-        </p>
-          
-        <div class="cta-wrapper center">
-          <a href="https://udify.app/workflow/c5KoqdWR4a8mgKwP" target="_blank" rel="noopener noreferrer">
-            <button class="cta-button-blue">議事録ワークフローを見る</button>
-          </a>
-        </div>
-      </div>
-    </div>
+.cta-button-white-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
 
-        <div class="accordion-item">
-          <div class="accordion-title">▶ 領収書自動管理ツール</div>
-          <div class="accordion-content">
-            <video controls class="zoomable-img" loading="lazy">
-              <source src="dify_demo.mp4" type="video/mp4" />
-              お使いのブラウザは動画タグに対応していません。
-            </video>
-            <p>
-              紙やPDFの領収書から、日付・金額・発行元などの情報を<br>
-              自動で抽出・分類するツールです。<br>
-              整理や手入力の手間を減らし、経費管理をスムーズにしたい方向けに構築しました。<br>
-              項目のばらつきにも対応できるよう、AIの抽出精度も細かく調整しています。
-            </p>
-              
-          </div>
-        </div>
-        
-  </div>
-</section>
+.cta-button-white-outline:hover {
+  background-color: white;
+  color: #1976d2;
+}
 
-        <section id="contact">
-      <h2>お問い合わせ</h2>
-      <p>
-        「これってAIでできる？」と思ったら、お気軽にご相談ください。<br />
-        業務内容の詳細や、あなたの課題に合わせた最適な方法をご提案します。
-      </p>
-      <p class="contact-hours">対応時間：9:00〜21:00 ／ 不定休</p>
-      <ul class="contact">
-        <li><a href="mailto:hamada.shinichiro9351@gmail.com"><span>✉️</span> メールで連絡</a></li>
-        <li><a href="https://line.me/ti/p/1bxzlr18OL"><span>💬</span> LINEで連絡</a></li>
-      </ul>
-    </section>
-  </main>
+.cta-button-blue {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 濱田慎一郎</p>
-    </div>
-  </footer>
+.cta-button-blue:hover {
+  background-color: white;
+  color: #1976d2;
+  border: 2px solid #1976d2;
+}
 
-  <button id="backToTopBtn">↑</button>
-  <div class="modal-img-bg"></div>
+main section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 32px;
+  padding: 24px;
+}
 
-  <!-- Dify チャットボット -->
-  <script>
-    window.difyChatbotConfig = {
-      token: '7KEZjPjuudlApQZ9',
-      systemVariables: {},
-      userVariables: {},
-    };
-    window.onload = function () {
-      setTimeout(function () {
-        if (typeof window.openChatWindow === 'function') {
-          window.openChatWindow();
-        }
-      }, 1000);
-    };
-  </script>
-  <script src="https://udify.app/embed.min.js" id="7KEZjPjuudlApQZ9" defer></script>
+h2 {
+  color: #1976d2;
+  margin-top: 0;
+}
 
-  <!-- アコーディオン動作用 -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const items = document.querySelectorAll('.accordion-item');
+ul {
+  padding-left: 20px;
+}
 
-      items.forEach(item => {
-        const title = item.querySelector('.accordion-title');
-        title.addEventListener('click', function () {
-          item.classList.toggle('active');
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+footer {
+  background: #f0f0f0;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 16px;
+}
+
+.works-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.accordion-title {
+  position: relative;
+  padding-right: 36px;
+  padding: 16px;
+  background: #e3f2fd;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion-title::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s;
+}
+.accordion-item.active .accordion-title::before {
+  content: '▼';
+}
+
+.accordion-title::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 4px;
+  background: #1976d2;
+  border-radius: 2px;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+.accordion-content {
+  padding: 0 16px;
+  display: none;
+  transition: none;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.zoomable-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.modal-img-bg {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-img-bg img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-hours {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #222;
+}
