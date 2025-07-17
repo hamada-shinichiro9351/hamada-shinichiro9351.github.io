@@ -70,9 +70,23 @@ header h1 {
   transform: translateY(-2px);
 }
 
-.cta-wrapper {
+.cta-button-blue {
+  background-color: #1a73e8;
+  color: white;
+  padding: 12px 24px;
+  border: 2px solid #1a73e8;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
   text-align: center;
-  margin-top: 16px;
+}
+
+.cta-button-blue:hover {
+  background-color: #1558b0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
 }
 
 /* セクション設定 */
