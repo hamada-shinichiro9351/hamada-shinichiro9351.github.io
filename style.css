@@ -49,7 +49,7 @@ header h1 {
   margin-bottom: 16px;
 }
 
-/* CTAボタン */
+/* CTAボタン（通常） */
 .cta-button {
   background-color: #1976d2;
   color: white;
@@ -70,8 +70,9 @@ header h1 {
   transform: translateY(-2px);
 }
 
+/* CTAボタン（白枠青ベース） */
 .cta-button-blue {
-  background-color: transparent;
+  background-color: #1a73e8;
   color: white;
   padding: 12px 24px;
   border: 2px solid white;
@@ -84,12 +85,12 @@ header h1 {
 }
 
 .cta-button-blue:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  background-color: #1558b0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
 }
 
-/* セクション設定 */
+/* セクション */
 main section {
   background: #fff;
   border-radius: 10px;
@@ -147,11 +148,11 @@ section ul {
 }
 
 .accordion-content {
-  max-height: 1000px;
-  overflow: visible;
+  max-height: 2000px; /* 十分な高さを確保 */
+  overflow: hidden;
   padding: 16px;
   background: #fff;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  transition: max-height 0.4s ease;
   border-top: 1px solid #ddd;
   font-size: 0.95rem;
 }
@@ -168,7 +169,7 @@ section ul {
   font-weight: bold;
 }
 
-/* ズーム可能画像 */
+/* ズーム画像 */
 .zoomable-img {
   width: 100%;
   max-width: 320px;
@@ -185,7 +186,7 @@ section ul {
   transform: scale(1.02);
 }
 
-/* モーダル */
+/* モーダル画像 */
 .modal-img-bg {
   position: fixed;
   top: 0;
@@ -208,6 +209,12 @@ section ul {
   max-height: 90%;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* CTAラッパー（中央揃え） */
+.cta-wrapper {
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* お問い合わせ */
@@ -298,7 +305,7 @@ section ul {
   margin-bottom: 80px !important;
 }
 
-/* レスポンシブ対応 */
+/* レスポンシブ */
 @media (max-width: 480px) {
   header h1 {
     font-size: 1.8rem;
