@@ -136,15 +136,24 @@ footer {
   font-weight: bold;
 }
 
+.accordion-title::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s;
+}
+.accordion-item.active .accordion-title::before {
+  content: '▼';
+}
+
 .accordion-content {
   padding: 0 16px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s;
+  display: none;
+  transition: none;
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 1000px; /* 十分大きな値で全体表示を保証 */
+  display: block;
   padding-top: 16px;
   padding-bottom: 16px;
 }
