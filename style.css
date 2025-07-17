@@ -94,6 +94,20 @@ main section {
 h2 {
   color: #1976d2;
   margin-top: 0;
+  position: relative;
+  padding-left: 20px;
+}
+h2::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 1.4em;
+  background: #1976d2;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 ul {
@@ -146,17 +160,6 @@ footer {
 }
 .accordion-item.active .accordion-title::before {
   content: '▼';
-}
-
-.accordion-title::after {
-  content: '';
-  display: inline-block;
-  width: 28px;
-  height: 4px;
-  background: #1976d2;
-  border-radius: 2px;
-  margin-left: 12px;
-  vertical-align: middle;
 }
 
 .accordion-content {
