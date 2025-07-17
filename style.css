@@ -138,15 +138,14 @@ footer {
 
 .accordion-content {
   padding: 0 16px;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  display: none;
+  transition: none;
 }
 
 .accordion-item.active .accordion-content {
+  display: block;
   padding-top: 16px;
   padding-bottom: 16px;
-  max-height: none;
 }
 
 .zoomable-img {
