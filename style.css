@@ -260,3 +260,45 @@ footer {
   height: 48rem !important;
   margin-bottom: 80px !important;
 }
+
+/* ▼ 追記：HTML構成に合わせたCSS調整（選ばれる理由・制作物・スマホ対応） */
+section ul {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 1em;
+  line-height: 1.6;
+}
+
+.accordion-content strong {
+  color: #1976d2;
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  main section {
+    padding: 24px 16px;
+  }
+
+  .accordion-title {
+    font-size: 1rem;
+  }
+
+  .accordion-content {
+    font-size: 0.9rem;
+    padding: 0 12px;
+  }
+
+  .contact a {
+    font-size: 0.95rem;
+  }
+}
