@@ -138,12 +138,13 @@ footer {
 
 .accordion-content {
   padding: 0 16px;
-  display: none;
-  transition: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s;
 }
 
 .accordion-item.active .accordion-content {
-  display: block;
+  max-height: 1000px; /* 十分大きな値で全体表示を保証 */
   padding-top: 16px;
   padding-bottom: 16px;
 }
