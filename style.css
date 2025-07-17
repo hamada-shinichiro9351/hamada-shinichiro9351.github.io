@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -73,7 +74,6 @@ main section {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 明るい青系で見出しの視認性を向上 */
 h2 {
   color: #1976d2;
   border-left: 4px solid #1976d2;
@@ -185,14 +185,12 @@ ul {
   flex-wrap: wrap;
 }
 
-/* 👇 このブロックをここに追加！ */
 .contact-hours {
   text-align: center;
   font-size: 1rem;
   margin: 8px 0 16px;
   color: #333;
 }
-/* 👆 ここまで追加 */
 
 .contact a {
   text-decoration: none !important;
@@ -203,7 +201,6 @@ ul {
   line-height: 1.5;
   transition: color 0.2s, text-decoration 0.2s;
   cursor: pointer;
-
 }
 
 .contact a:hover {
@@ -261,7 +258,38 @@ footer {
   margin-bottom: 80px !important;
 }
 
-/* ▼ 追記：HTML構成に合わせたCSS調整（選ばれる理由・制作物・スマホ対応） */
+/* ▼ お問い合わせセクション視認性改善（背景＋リンク装飾） */
+#contact {
+  background: #f0f4f8;
+  border: 2px solid #cfd8dc;
+  padding: 32px 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#contact h2 {
+  color: #0d47a1;
+}
+
+.contact a {
+  background-color: white;
+  border: 1px solid #1C64F2;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: #1C64F2;
+}
+
+.contact a:hover {
+  background-color: #1C64F2;
+  color: white;
+  text-decoration: none;
+}
+/* ▲ お問い合わせ改善ここまで */
+
+/* ▼ 選ばれる理由・制作物・スマホ対応のCSS調整 */
 section ul {
   list-style: disc inside;
   margin: 0;
@@ -302,3 +330,4 @@ section ul {
     font-size: 0.95rem;
   }
 }
+/* ▲ HTML構成に合わせた最終調整ここまで */
