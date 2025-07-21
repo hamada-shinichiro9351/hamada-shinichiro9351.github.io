@@ -259,3 +259,42 @@ footer {
   font-size: 0.95rem;
   color: #222;
 }
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .profile-photo {
+    width: 96px;
+    height: 96px;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    padding-left: 12px;
+  }
+
+  h2::before {
+    height: 1em;
+    width: 4px;
+  }
+
+  .cta-button-blue,
+  .cta-button-white-outline {
+    width: 100%;
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .zoomable-img,
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
