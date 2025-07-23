@@ -7,13 +7,29 @@
   color: white;
 }
 
-  body {
-    font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-    background: #f4f7fa;
-    color: #222;
-    margin: 0;
-    font-size: 14.5px; /* ← ここを追加 */
-  }
+body {
+  font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: #f4f7fa;
+  color: #222;
+  margin: 0;
+  font-size: 14.5px;
+}
+
+strong {
+  color: #d25b00; /* 見出しとは違う暖色で強調 */
+  font-weight: bold;
+}
+
+
+.subtext {
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* 見出し補助として使いたいとき（任意） */
+.h2-gray {
+  color: #444;
+}
 
 .container {
   max-width: 800px;
@@ -98,6 +114,7 @@ header h1 {
   margin: 24px auto 0 auto;
   display: block;
 }
+
 .cta-button-main:hover {
   background: #1251a3;
   box-shadow: 0 6px 24px rgba(25, 118, 210, 0.25);
@@ -260,7 +277,6 @@ footer {
   font-size: 0.95rem;
   color: #222;
 }
-
 
 @media (max-width: 768px) {
   .container {
