@@ -315,3 +315,12 @@ footer {
     height: auto;
   }
 }
+
+/* --- アコーディオン内キャッチコピーを大きく表示 --- */
+.accordion-content p strong {
+  font-size: 1.3em;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
