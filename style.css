@@ -316,6 +316,11 @@ footer {
   }
 }
 
+/* セクションタイトルの青を統一 */
+.demo-section h2 {
+  color: #007acc; /* 他のh2と同じ青に設定（必要に応じて調整） */
+}
+
 /* --- アコーディオン内キャッチコピーを大きく表示 --- */
 .accordion-content p strong {
   font-size: 1.3em;
