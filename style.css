@@ -1,3 +1,6 @@
+/* Google Fontsをインポート */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -8,11 +11,17 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  /* 本文のフォントをNoto Sans JPに変更 */
+  font-family: 'Noto Sans JP', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
   background: #f4f7fa;
   color: #222;
   margin: 0;
   font-size: 14.5px;
+}
+
+/* 見出し用のフォントをM PLUS 1pに設定 */
+h1, h2, h3, .accordion-title {
+  font-family: 'M PLUS 1p', 'Noto Sans JP', sans-serif;
 }
 
 strong {
@@ -42,6 +51,9 @@ header {
   color: #fff;
   padding: 48px 0 32px 0;
   text-align: center;
+  /* ヘッダーに薄いストライプ模様を追加 */
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
+  background-size: 60px 60px;
 }
 
 header h1 {
@@ -151,12 +163,13 @@ ul {
   padding-left: 20px;
 }
 
+/* フッターのデザインをヘッダーと統一 */
 footer {
-  background: #f0f0f0;
-  padding: 16px 0;
+  background: #1976d2;
+  padding: 24px 0;
   text-align: center;
   font-size: 0.9rem;
-  color: #555;
+  color: #fff;
 }
 
 .profile-photo {
