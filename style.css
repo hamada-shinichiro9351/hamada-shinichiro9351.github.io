@@ -243,7 +243,8 @@ footer {
 #backToTopBtn {
   position: fixed;
   bottom: 32px;
-  right: 32px;
+  left: 50%;
+  transform: translateX(-50%);
   background: #1976d2;
   color: white;
   border: none;
@@ -254,6 +255,14 @@ footer {
   cursor: pointer;
   display: none;
   z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: opacity 0.3s;
+  opacity: 0.8;
+}
+
+#backToTopBtn:hover {
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .contact {
@@ -331,4 +340,3 @@ footer {
   display: inline-block;
   margin-bottom: 4px;
 }
-
