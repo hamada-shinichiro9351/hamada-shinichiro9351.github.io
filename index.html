@@ -323,6 +323,33 @@
           item.classList.toggle('active');
         });
       });
+
+      // 画像拡大表示機能
+      let modalBg = document.querySelector('.modal-img-bg');
+      document.querySelectorAll('.zoomable-img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function() {
+          modalBg.innerHTML = '<img src="' + img.src + '" alt="拡大画像">';
+          modalBg.style.display = 'flex';
+        });
+      });
+      modalBg.addEventListener('click', function() {
+        modalBg.style.display = 'none';
+        modalBg.innerHTML = '';
+      });
+
+      // 上に戻るボタンの表示制御
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTopBtn.style.display = 'block';
+        } else {
+          backToTopBtn.style.display = 'none';
+        }
+      });
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     });
   </script>
 </body>
