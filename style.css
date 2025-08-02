@@ -212,11 +212,14 @@ footer {
 }
 
 .zoomable-img {
-  max-width: 100%;
+  max-width: 320px;
+  width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 12px;
+  margin: 12px auto;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .modal-img-bg {
