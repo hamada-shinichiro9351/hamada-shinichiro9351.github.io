@@ -348,7 +348,7 @@ footer {
 
 /* --- アコーディオン内キャッチコピーを大きく表示 --- */
 .accordion-content p strong {
-  font-size: 1.3em;
+  font-size: 1.1em; 
   font-weight: bold;
   display: inline-block;
   margin-bottom: 4px;
