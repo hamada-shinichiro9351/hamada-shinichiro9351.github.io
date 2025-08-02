@@ -1,0 +1,342 @@
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #1976d2;
+  color: white;
+}
+
+body {
+  font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: #f4f7fa;
+  color: #222;
+  margin: 0;
+  font-size: 14.5px;
+}
+
+strong {
+  color: #d25b00; /* 見出しとは違う暖色で強調 */
+  font-weight: bold;
+}
+
+
+.subtext {
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* 見出し補助として使いたいとき（任意） */
+.h2-gray {
+  color: #444;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 24px;
+}
+
+header {
+  background: #1976d2;
+  color: #fff;
+  padding: 48px 0 32px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+.tagline {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.cta-wrapper {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.cta-wrapper.center {
+  text-align: center;
+}
+
+.cta-button-white-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.cta-button-white-outline:hover {
+  background-color: white;
+  color: #1976d2;
+}
+
+.cta-button-blue {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.cta-button-blue:hover {
+  background-color: white;
+  color: #1976d2;
+  border: 2px solid #1976d2;
+}
+
+.cta-button-main {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 18px 36px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin: 24px auto 0 auto;
+  display: block;
+}
+
+.cta-button-main:hover {
+  background: #1251a3;
+  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.25);
+}
+
+main section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 32px;
+  padding: 24px;
+}
+
+h2 {
+  color: #1976d2;
+  margin-top: 0;
+  position: relative;
+  padding-left: 20px;
+}
+h2::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 1.4em;
+  background: #1976d2;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+footer {
+  background: #f0f0f0;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 16px;
+}
+
+.works-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.accordion-title {
+  position: relative;
+  padding-right: 36px;
+  padding: 16px;
+  background: #e3f2fd;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion-title::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s;
+}
+.accordion-item.active .accordion-title::before {
+  content: '▼';
+}
+
+.accordion-content {
+  padding: 0 16px;
+  display: none;
+  transition: none;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.zoomable-img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 12px auto;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.modal-img-bg {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-img-bg img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: opacity 0.3s;
+  opacity: 0.8;
+}
+
+#backToTopBtn:hover {
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-hours {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .profile-photo {
+    width: 96px;
+    height: 96px;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    padding-left: 12px;
+  }
+
+  h2::before {
+    height: 1em;
+    width: 4px;
+  }
+
+  .cta-button-blue,
+  .cta-button-white-outline {
+    width: 100%;
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .zoomable-img,
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* セクションタイトルの青を統一 */
+.demo-section h2 {
+  color: #007acc; /* 他のh2と同じ青に設定（必要に応じて調整） */
+}
+
+/* --- アコーディオン内キャッチコピーを大きく表示 --- */
+.accordion-content p strong {
+  font-size: 1.3em;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 4px;
+}
