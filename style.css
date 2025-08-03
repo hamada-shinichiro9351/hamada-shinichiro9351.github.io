@@ -353,3 +353,10 @@ footer {
   display: inline-block;
   margin-bottom: 4px;
 }
+
+/* 【】で囲まれた部分のスタイル */
+.accordion-content p strong:has(span),
+.accordion-content p strong span {
+  color: #1976d2;
+  font-weight: 700;
+}
