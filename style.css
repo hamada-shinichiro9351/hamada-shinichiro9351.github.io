@@ -11,31 +11,28 @@
 }
 
 body {
-  /* 本文のフォントをNoto Sans JPに変更 */
   font-family: 'Noto Sans JP', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
   background: #f4f7fa;
   color: #222;
   margin: 0;
   font-size: 14.5px;
+  line-height: 1.8; /* 行間を少し広げて読みやすく */
 }
 
-/* 見出し用のフォントをM PLUS 1pに設定 */
 h1, h2, h3, .accordion-title {
   font-family: 'M PLUS 1p', 'Noto Sans JP', sans-serif;
 }
 
 strong {
-  color: #d25b00; /* 見出しとは違う暖色で強調 */
+  color: #d25b00;
   font-weight: bold;
 }
-
 
 .subtext {
   color: #666;
   font-size: 0.95em;
 }
 
-/* 見出し補助として使いたいとき（任意） */
 .h2-gray {
   color: #444;
 }
@@ -51,7 +48,6 @@ header {
   color: #fff;
   padding: 48px 0 32px 0;
   text-align: center;
-  /* ヘッダーに薄いストライプ模様を追加 */
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
   background-size: 60px 60px;
 }
@@ -70,10 +66,6 @@ header h1 {
 
 .cta-wrapper {
   margin-top: 24px;
-  text-align: center;
-}
-
-.cta-wrapper.center {
   text-align: center;
 }
 
@@ -97,7 +89,7 @@ header h1 {
 .cta-button-blue {
   background-color: #1976d2;
   color: white;
-  border: none;
+  border: 2px solid transparent; /* ホバー時のレイアウト崩れを防ぐ */
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: 600;
@@ -110,26 +102,6 @@ header h1 {
   background-color: white;
   color: #1976d2;
   border: 2px solid #1976d2;
-}
-
-.cta-button-main {
-  background-color: #1976d2;
-  color: #fff;
-  border: none;
-  padding: 18px 36px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  margin: 24px auto 0 auto;
-  display: block;
-}
-
-.cta-button-main:hover {
-  background: #1251a3;
-  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.25);
 }
 
 main section {
@@ -159,11 +131,15 @@ h2::before {
   transform: translateY(-50%);
 }
 
-ul {
+ul, ol {
   padding-left: 20px;
+  line-height: 1.8;
 }
 
-/* フッターのデザインをヘッダーと統一 */
+li {
+  margin-bottom: 12px; /* リスト項目間の余白 */
+}
+
 footer {
   background: #1976d2;
   padding: 24px 0;
@@ -181,22 +157,17 @@ footer {
   margin-bottom: 16px;
 }
 
-.works-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .accordion-item {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 6px;
   overflow: hidden;
+  margin-bottom: 16px;
 }
 
 .accordion-title {
   position: relative;
-  padding-right: 36px;
   padding: 16px;
+  padding-right: 36px;
   background: #e3f2fd;
   cursor: pointer;
   font-weight: bold;
@@ -209,19 +180,18 @@ footer {
   transition: transform 0.2s;
 }
 .accordion-item.active .accordion-title::before {
-  content: '▼';
+  transform: rotate(90deg);
 }
 
 .accordion-content {
   padding: 0 16px;
   display: none;
-  transition: none;
 }
 
 .accordion-item.active .accordion-content {
   display: block;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px;
+  border-top: 1px solid #ddd;
 }
 
 .zoomable-img {
@@ -229,7 +199,7 @@ footer {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: zoom-in;
   margin: 12px auto;
   display: block;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -241,10 +211,11 @@ footer {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  cursor: zoom-out;
 }
 
 .modal-img-bg img {
@@ -255,9 +226,8 @@ footer {
 
 #backToTopBtn {
   position: fixed;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 20px;
+  right: 20px;
   background: #1976d2;
   color: white;
   border: none;
@@ -269,13 +239,13 @@ footer {
   display: none;
   z-index: 999;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
   opacity: 0.8;
 }
 
 #backToTopBtn:hover {
   opacity: 1;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.1);
 }
 
 .contact {
@@ -304,36 +274,33 @@ footer {
 }
 
 @media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
   .container {
     padding: 16px;
   }
-
   .profile-photo {
     width: 96px;
     height: 96px;
   }
-
   h2 {
     font-size: 1.25rem;
     padding-left: 12px;
   }
-
   h2::before {
     height: 1em;
     width: 4px;
   }
-
   .cta-button-blue,
   .cta-button-white-outline {
     width: 100%;
   }
-
   .contact {
     flex-direction: column;
     gap: 12px;
     align-items: center;
   }
-
   .zoomable-img,
   video {
     width: 100%;
@@ -341,12 +308,6 @@ footer {
   }
 }
 
-/* セクションタイトルの青を統一 */
-.demo-section h2 {
-  color: #007acc; /* 他のh2と同じ青に設定（必要に応じて調整） */
-}
-
-/* --- アコーディオン内キャッチコピーを大きく表示 --- */
 .accordion-content p strong {
   font-size: 1.1em; 
   font-weight: bold;
@@ -354,9 +315,125 @@ footer {
   margin-bottom: 4px;
 }
 
-/* 【】で囲まれた部分のスタイル */
-.accordion-content p strong:has(span),
 .accordion-content p strong span {
   color: #1976d2;
   font-weight: 700;
+}
+
+
+/* ======================================================= */
+/* ★★★ 新機能：業務改善インパクト診断 ★★★ */
+/* ======================================================= */
+#simulator {
+  background-color: #e3f2fd; /* アコーディオンの背景色と統一 */
+  padding: 24px;
+  border-radius: 10px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+#simulator h2 {
+  text-align: center;
+  padding-left: 0; /* 中央寄せのため、左の線を削除 */
+}
+
+#simulator h2::before {
+  display: none; /* 中央寄せのため、左の線を削除 */
+}
+
+#simulator p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+}
+
+.simulator-body {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.impact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.impact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-form label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.impact-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  width: 100%;
+}
+
+.impact-form .cta-button-blue {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.simulator-result {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px dashed #ccc;
+  text-align: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.simulator-result.visible {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.result-lead-text {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.result-time {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #d25b00; /* 強調色のオレンジを使用 */
+  margin-bottom: 8px;
+}
+
+.result-time span {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #333;
+}
+
+.result-sub-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.result-note {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 24px;
+}
+
+.simulator-result .cta-button-blue {
+  display: inline-block;
+  width: auto;
 }
